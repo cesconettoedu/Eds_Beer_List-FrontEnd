@@ -27,7 +27,6 @@ function Enter() {
 const Wrapper = styled.main`
 
 .btn{
- 
   font-size: 2rem;
 }
 `

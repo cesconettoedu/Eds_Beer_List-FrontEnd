@@ -4,7 +4,8 @@ import { navLinks } from '../util/constants'
 
 function Home() {
   return (
-    <Wrapper style={{paddingTop: "10vw"}}>
+    
+    <Wrapper style={{paddingTop: "10vw"}} id="#">
         {navLinks.map(link => { 
           return(
             <div key={link.id} >

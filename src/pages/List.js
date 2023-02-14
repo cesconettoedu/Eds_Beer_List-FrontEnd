@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
-import { Card } from "../components";
+import { Card, Navbar } from "../components";
 import axios from "axios";
 
 function List() {
@@ -21,21 +21,24 @@ function List() {
 
   return (
     <Wrapper>
-      <div className="grup">
-        <div className="parent-flex">
-          {searchData.length > 0 &&
-            searchData.map((breja) => {
-              return (
-                <div className="flex-item" key={breja.id}>
-                  <Card
-                    id={breja.id}
-                    title={breja.name}
-                    image={breja.image}
-                    note={breja.note}
-                  />
-                </div>
-              );
-            })}
+      <div className="">
+        <Navbar />
+        <div className="grup" id="list">
+          <div className="parent-flex">
+            {searchData.length > 0 &&
+              searchData.map((breja) => {
+                return (
+                  <div className="flex-item" key={breja.id}>
+                    <Card
+                      id={breja.id}
+                      title={breja.name}
+                      image={breja.image}
+                      note={breja.note}
+                    />
+                  </div>
+                );
+              })}
+          </div>
         </div>
       </div>
     </Wrapper>
@@ -44,7 +47,7 @@ function List() {
 
 const Wrapper = styled.main`
   .grup {
-    
+    padding-top: 4vw;
   }
 
   .parent-flex {
@@ -52,6 +55,9 @@ const Wrapper = styled.main`
     flex-wrap: wrap;
     justify-content: center;
     margin-top: 1vh;
+  }
+
+  .flex-item {
   }
 `;
 
