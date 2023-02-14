@@ -1,9 +1,16 @@
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Enter from './pages/Enter';
 
 function App() {
   return (
-    <>
-      Comecar do comeco kkkkkkkkkkk
-    </>
+     <Router>
+      <Routes>
+        <Route path='/' element={<Enter />} />
+        {/* <Route path='/home' element={<Home />} />
+        <Route path='/list' element={<List />} />
+        <Route path='/add' element={<Add />} /> */}
+      </Routes>
+    </Router>
   );
 }
 
