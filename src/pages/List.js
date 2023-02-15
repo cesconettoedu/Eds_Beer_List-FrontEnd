@@ -3,12 +3,12 @@ import styled from "styled-components";
 import { Card, Navbar } from "../components";
 import axios from "axios";
 
-function List() {
+function List({addre}) {
   const [searchData, setSearchData] = useState([]);
 
   async function listAllBeers() {
     try {
-      const res = await axios.get(`http://localhost:8080/api/beers/all`);
+      const res = await axios.get(addre + `/all`);
       setSearchData(res.data);
     } catch (err) {
       console.error(err.message);
