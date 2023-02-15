@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { Enter, Home, List } from './pages';
+import { Enter, List } from './pages';
 
 function App() {
 
@@ -9,7 +9,6 @@ function App() {
      <Router>
       <Routes>
         <Route path='/' element={<Enter />} />
-        <Route path='/home' element={<Home />} />
         <Route path='/list' element={<List addre={addre} />} />
         {/*
         <Route path='/add' element={<Add />} /> */}

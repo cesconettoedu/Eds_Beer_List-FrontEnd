@@ -29,8 +29,7 @@ const Wrapper = styled.main`
   .card-img-top {
     width: 100%;
     height: 30vh;
-    object-fit: contain;
-    
+    object-fit: contain;  
   }
 `;
 

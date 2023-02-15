@@ -61,7 +61,7 @@ function Navbar() {
             </li>
 
             <li className="nav-item text-center">
-              <a href="/home" className="nav-link">
+              <a href="/" className="nav-link">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="40"
@@ -78,7 +78,7 @@ function Navbar() {
             </li>
 
             <li className="nav-item text-center">
-              <a href="/home" className="nav-link">
+              <a href="/" className="nav-link">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="40"

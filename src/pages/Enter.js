@@ -13,7 +13,7 @@ function Enter() {
           <img src={logo} alt="edlogo" className="edlogo" />
           
           <div className="py-5">
-            <Link to="/home">
+            <Link to="/list">
               <div className="btn">ENTER</div>
             </Link>
           </div>
