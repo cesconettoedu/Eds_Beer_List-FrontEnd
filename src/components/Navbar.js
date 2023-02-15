@@ -64,7 +64,7 @@ function Navbar() {
               </li>
 
               <li className="nav-item text-center">
-                <a href="/" className="nav-link">
+                <a href="/add" className="nav-link">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="40"
