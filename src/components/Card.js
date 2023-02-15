@@ -1,18 +1,23 @@
 import React from "react";
 import styled from "styled-components";
+import stars from "../assets/05mugs.png";
 
 function CardBeer({ id, title, image, note }) {
 
 
   return (
     <Wrapper>
-      <div style={{ padding: "2vw" }} key={id}>
+      <div className="allCard" key={id}>
         <div className="card" style={{ width: "18rem" }}>
           <h1 className="card-title text-center">{title}</h1>
           <img src={image} className="card-img-top " alt="..."></img>
           <div className="card-body">
             <p className="card-text">{note}</p>
-            <div className="btn btn-primary">Go somewhere</div>
+            <div className="">
+              <img src={stars} alt="stars"  
+                width="240"
+                height="60"/>
+            </div>
           </div>
         </div>
       </div>
@@ -21,8 +26,12 @@ function CardBeer({ id, title, image, note }) {
 }
 
 const Wrapper = styled.main`
+  .allCard {
+    padding: 2rem;
+  }
+
   .card {
-        padding-top: 4%;
+    padding: 4%;
     background: linear-gradient(90deg, #ff9500 0%, #d5cb0f 100%);
   }
 

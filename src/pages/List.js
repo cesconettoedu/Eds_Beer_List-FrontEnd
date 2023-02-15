@@ -54,7 +54,7 @@ const Wrapper = styled.main`
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin-top: 1vh;
+    margin-top: 4vh;
   }
 
   .flex-item {
