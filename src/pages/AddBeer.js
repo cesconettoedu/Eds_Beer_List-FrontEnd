@@ -35,7 +35,7 @@ function AddBeer() {
       <div className="container d-flex justify-content-center">
         <form>
           <div className="mb-3">
-            <label for="beerName" class="form-label">
+            <label htmlFor="beerName" className="form-label">
               Beer Name
             </label>
             <input
@@ -50,7 +50,7 @@ function AddBeer() {
           </div>
 
           <div className="mb-3">
-            <label for="pictureAddress" class="form-label">
+            <label htmlFor="pictureAddress" className="form-label">
               Picture Address
             </label>
             <input
@@ -64,7 +64,7 @@ function AddBeer() {
           </div>   
 
           <div className="mb-3">
-            <label for="note" class="form-label">
+            <label htmlFor="note" className="form-label">
               Note
             </label>
             <input
@@ -80,7 +80,7 @@ function AddBeer() {
 
 
           <div className="mb-3">
-            <label for="taste" class="form-label">
+            <label htmlFor="taste" className="form-label">
              Taste
             </label>
             
