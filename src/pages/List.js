@@ -34,6 +34,7 @@ function List({addre}) {
                       title={breja.name}
                       image={breja.image}
                       note={breja.note}
+                      star={breja.star}
                     />
                   </div>
                 );

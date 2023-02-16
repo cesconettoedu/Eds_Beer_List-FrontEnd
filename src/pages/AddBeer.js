@@ -2,12 +2,20 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { Navbar } from "../components";
 import Card from "../components/Card";
+import mug from "../assets/mugs/beerIconFull.png";
+import mug0 from "../assets/mugs/00mugs.png"
+import mug1 from "../assets/mugs/01mugs.png"
+import mug2 from "../assets/mugs/02mugs.png"
+import mug3 from "../assets/mugs/03mugs.png"
+import mug4 from "../assets/mugs/04mugs.png"
+import mug5 from "../assets/mugs/05mugs.png"
 
 function AddBeer() {
   const [image, setImage] = useState("");
   const [title, setTitle] = useState("");
   const [note, setNote] = useState("");
-  const [star, setStar] = useState("");
+  const [star, setStar] = useState(mug0);
+
 
   return (
     <Wrapper>
@@ -18,6 +26,7 @@ function AddBeer() {
           image={image} 
           title={title} 
           note={note}
+          star={star}
         />
       </div>
 
@@ -68,20 +77,25 @@ function AddBeer() {
           />
           </div> 
 
+
+
           <div className="mb-3">
-            <label for="note" class="form-label">
-              Note
+            <label for="taste" class="form-label">
+             Taste
             </label>
-            <input
-            className="form-control form-control-lg my-1"
-            type="text"
-            star="star"
             
-            onChange={(e) => setStar(e.target.value)}
-            // value={image || ""}
-          />
-          </div>  
+            <div>
+              <img src={mug} className="mug" alt="glass" onClick={() => setStar(mug1)}/>
+              <img src={mug} className="mug" alt="glass" onClick={() => setStar(mug2)}/>
+              <img src={mug} className="mug" alt="glass" onClick={() => setStar(mug3)}/>
+              <img src={mug} className="mug" alt="glass" onClick={() => setStar(mug4)}/>
+              <img src={mug} className="mug" alt="glass" onClick={() => setStar(mug5)}/>
+            </div>
           
+
+          </div>  
+
+        
           <button className=' btn include' type="submit">Add Beer</button>
         </form>
       </div>
@@ -103,7 +117,46 @@ const Wrapper = styled.main`
     width: 60%;
   }
 
- 
+  .mug {
+    width: 4rem;
+    height: 5rem;
+    cursor: pointer;
+  }
+  
+
+
+
+
+  
+  .slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 15px;
+  border-radius: 5px;  
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%; 
+  background: #04AA6D;
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #04AA6D;
+  cursor: pointer;
+}
 `;
 
 export default AddBeer;

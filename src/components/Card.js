@@ -1,8 +1,41 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
-import stars from "../assets/05mugs.png";
+import mug1 from "../assets/mugs/01mugs.png"
+import mug2 from "../assets/mugs/02mugs.png"
+import mug3 from "../assets/mugs/03mugs.png"
+import mug4 from "../assets/mugs/04mugs.png"
+import mug5 from "../assets/mugs/05mugs.png"
 
-function CardBeer({ id, title, image, note }) {
+
+function CardBeer({ id, title, image, note, star}) {
+  
+  const [stars, setStars] = useState();
+
+  const StarClick = (id) => {
+    if(star == 1) {
+      setStars(mug1)
+    }
+     if(star == 2) {
+      setStars(mug2)
+    }
+     if(star == 3) {
+      setStars(mug3)
+    }
+     if(star == 4) {
+      setStars(mug4)
+    }
+     if(star == 5) {
+      setStars(mug5)
+    }
+  }
+
+
+
+  useEffect(() => {
+
+    StarClick(star)
+  }, []);
+
 
 
   return (
