@@ -21,7 +21,7 @@ function AddBeer({addre}) {
 
     
  
-// tentando fazer adicionar cerveja
+// add beer
   const handleSubmit = async (e) => {
     e.preventDefault()
     const body = {
@@ -126,7 +126,7 @@ function AddBeer({addre}) {
               <img src={mug} className="mug" alt="glass" onClick={() => setStar(2)}/>
               <img src={mug} className="mug" alt="glass" onClick={() => setStar(3)}/>
               <img src={mug} className="mug" alt="glass" onClick={() => setStar(4)}/>
-              <img src={mug} className="mug" alt="glass" onClick={() => setStar(mug5)}/>
+              <img src={mug} className="mug" alt="glass" onClick={() => setStar(5)}/>
             </div>
           
 
