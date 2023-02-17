@@ -6,6 +6,7 @@ import axios from "axios";
 function List({addre}) {
   const [searchData, setSearchData] = useState([]);
 
+
   async function listAllBeers() {
     try {
       const res = await axios.get(addre + `/all`);

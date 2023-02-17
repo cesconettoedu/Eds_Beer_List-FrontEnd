@@ -10,11 +10,47 @@ import mug3 from "../assets/mugs/03mugs.png"
 import mug4 from "../assets/mugs/04mugs.png"
 import mug5 from "../assets/mugs/05mugs.png"
 
-function AddBeer() {
+
+import axios from "axios";
+
+function AddBeer({addre}) {
   const [image, setImage] = useState("");
   const [title, setTitle] = useState("");
   const [note, setNote] = useState("");
-  const [star, setStar] = useState(mug0);
+  const [star, setStar] = useState(0);
+
+    
+ 
+// tentando fazer adicionar cerveja
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    const body = {
+     
+      title,
+      image,
+      note,
+      star
+    }
+
+    try {    
+      console.log(body);  
+      axios.post(addre + `/add`, body)
+       .then((response) => {
+         console.log("addddddddd");
+        
+       })
+       } catch (err) {
+         console.error(err.response);
+       }
+      
+  }
+
+
+
+
+
+
+
 
 
   return (
@@ -33,7 +69,7 @@ function AddBeer() {
       <br />
 
       <div className="container d-flex justify-content-center">
-        <form>
+        <form onSubmit={handleSubmit}>
           <div className="mb-3">
             <label htmlFor="beerName" className="form-label">
               Beer Name
@@ -45,7 +81,7 @@ function AddBeer() {
             maxLength="50"
             placeholder="Beer Name"
             onChange={(e) => setTitle(e.target.value)}
-            // value={name || ""}
+            value={title || ""}
           />
           </div>
 
@@ -59,7 +95,7 @@ function AddBeer() {
             name="image"
             placeholder="Picture address"
             onChange={(e) => setImage(e.target.value)}
-            // value={image || ""}
+            value={image || ""}
           />
           </div>   
 
@@ -73,7 +109,7 @@ function AddBeer() {
             note="note"
             placeholder="Note"
             onChange={(e) => setNote(e.target.value)}
-            // value={image || ""}
+             value={note || ""}
           />
           </div> 
 
@@ -84,11 +120,12 @@ function AddBeer() {
              Taste
             </label>
             
+            {/* ainda nao ta funcionando , conflito depois que coloquei no card na lista */}
             <div>
-              <img src={mug} className="mug" alt="glass" onClick={() => setStar(mug1)}/>
-              <img src={mug} className="mug" alt="glass" onClick={() => setStar(mug2)}/>
-              <img src={mug} className="mug" alt="glass" onClick={() => setStar(mug3)}/>
-              <img src={mug} className="mug" alt="glass" onClick={() => setStar(mug4)}/>
+              <img src={mug} className="mug" alt="glass" onClick={() => setStar(1)}/>
+              <img src={mug} className="mug" alt="glass" onClick={() => setStar(2)}/>
+              <img src={mug} className="mug" alt="glass" onClick={() => setStar(3)}/>
+              <img src={mug} className="mug" alt="glass" onClick={() => setStar(4)}/>
               <img src={mug} className="mug" alt="glass" onClick={() => setStar(mug5)}/>
             </div>
           
