@@ -71,6 +71,7 @@ const Wrapper = styled.main`
   .card {
     padding: 4%;
     background: linear-gradient(90deg, #ff9500 0%, #d5cb0f 100%);
+    cursor: pointer;
   }
 
   .card-img-top {

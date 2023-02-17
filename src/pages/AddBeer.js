@@ -37,6 +37,7 @@ function AddBeer({addre}) {
       axios.post(addre + `/add`, body)
        .then((response) => {
          console.log("addddddddd");
+         alert("Beer Added")
         
        })
        } catch (err) {
@@ -44,12 +45,6 @@ function AddBeer({addre}) {
        }
       
   }
-
-
-
-
-
-
 
 
 
