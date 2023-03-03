@@ -2,6 +2,10 @@ import styled from "styled-components";
 import logo from "../assets/eulogo.png";
 
 function Navbar() {
+
+  const myIcon = 50
+  const iconSize = 22
+
   return (
     <Wrapper>
       <nav className="navbar  backnav navbar-expand-lg p-1 fixed-top ">
@@ -14,8 +18,8 @@ function Navbar() {
                 src={logo}
                 alt="edlogo"
                 className="edlogo"
-                width="60"
-                height="60"
+                width={myIcon}
+                height={myIcon}
               />
             </a>
           </div>
@@ -24,7 +28,7 @@ function Navbar() {
           <div className="search col-6">
             <input
               className="form-control mr-sm-2"
-              style={{ fontSize: "1.5rem" }}
+              style={{ fontSize: "1.5em" }}
               id="parameter"
               type="text"
               // onChange={handleChange}
@@ -49,8 +53,8 @@ function Navbar() {
                 <a href="/list" className="nav-link">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    width="30"
-                    height="30"
+                    width={iconSize}
+                    height={iconSize}
                     fill="currentColor"
                     className="bi bi-emoji-smile"
                     viewBox="0 0 16 16"
@@ -67,8 +71,8 @@ function Navbar() {
                 <a href="/add" className="nav-link">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                     width="30"
-                    height="30"
+                     width={iconSize}
+                    height={iconSize}
                     fill="currentColor"
                     className="bi bi-gear-wide-connected"
                     viewBox="0 0 16 16"
@@ -84,8 +88,8 @@ function Navbar() {
                 <a href="/" className="nav-link">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    width="30"
-                    height="30"
+                    width={iconSize}
+                    height={iconSize}
                     fill="currentColor"
                     className="bi bi-folder2-open"
                     viewBox="0 0 16 16"

@@ -10,12 +10,13 @@
   max-width: 400px;
   display: flex;
   flex-direction: row;
-  background-color: chocolate;
+  cursor: pointer;
+  background: linear-gradient(90deg, #d5cb0f 0%,  #ff9500 100%);
 }
 
 .card img {
   max-width: 160px;
- 
+    object-fit: contain;
 }
 
 .card-text {
