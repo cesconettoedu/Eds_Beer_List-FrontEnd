@@ -81,6 +81,7 @@ function CardBeer({ id, title, image, note, star}) {
             <img src={stars} class="card-img-top rounded p-1" alt="Descrição imagem"/>
             </div>
           </div>
+          <i class="bi bi-three-dots-vertical pt-2"></i>
         </div>
   
     </>

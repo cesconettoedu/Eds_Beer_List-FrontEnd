@@ -23,6 +23,11 @@
   font-size: 0.9em;
 }
 
+.bi-three-dots-vertical {
+  align-self: self-start;
+  font-size: 26px;
+}
+
 @media(min-width:491px) {
   .card {
     max-width: 195px;
@@ -39,7 +44,9 @@
     flex-direction: column;
     justify-content: flex-end;
     width: 100%;
-        
-
   }
+
+    .bi-three-dots-vertical {
+      align-self: end;
+    }
 }
