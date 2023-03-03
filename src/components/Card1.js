@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import './styles.css';
+import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
 
 import mug0 from "../assets/mugs/00mugs.png"
@@ -54,8 +54,8 @@ function CardBeer({ id, title, image, note, star}) {
 
 
   return (
-    <>
-      {/* <div className="allCard" key={id}>
+    <Wrapper>
+      <div className="allCard" key={id}>
         <div className="card" style={{ width: "18rem" }} onClick={() => singleBeer(id)}>
           <h1 className="card-title text-center">{title}</h1>
           <img src={image} className="card-img-top " alt="..."></img>
@@ -68,25 +68,30 @@ function CardBeer({ id, title, image, note, star}) {
             </div>
           </div>
         </div>
-      </div> */}
-    
-        <div class="card m-2 align-items-center "  key={id} onClick={() => singleBeer(id)}>
-          <div class="col-4 img-square">
-            <img src={image} class="card-img-top img-fluid rounded pt-1 pb-1" alt="Descrição imagem"/>
-          </div>
-          <div class="col-6 card-body d-flex  flex-column  align-items-center">
-            <h2 class="card-title">{title}</h2>
-            <p class="card-text">{note}</p>
-            <div class="mugs">
-            <img src={stars} class="card-img-top rounded p-1" alt="Descrição imagem"/>
-            </div>
-          </div>
-        </div>
-  
-    </>
+      </div>
+    </Wrapper>
   );
 }
 
-;
+const Wrapper = styled.main`
+  .allCard {
+    padding: 2rem;
+  }
+
+  .card {
+    padding: 4%;
+    background: linear-gradient(90deg, #ff9500 0%, #d5cb0f 100%);
+    cursor: pointer;
+  }
+
+  .card-img-top {
+    width: 100%;
+    height: 30vh;
+    object-fit: contain; 
+     
+  }
+
+  
+`;
 
 export default CardBeer;

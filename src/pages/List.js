@@ -3,8 +3,10 @@ import styled from "styled-components";
 import { Card, Navbar } from "../components";
 import axios from "axios";
 
+
 function List({addre}) {
   const [searchData, setSearchData] = useState([]);
+
 
 
   async function listAllBeers() {
@@ -16,6 +18,8 @@ function List({addre}) {
     }
   }
 
+  
+  
   useEffect(() => {
     listAllBeers("");
   }, []);
@@ -24,43 +28,36 @@ function List({addre}) {
     <Wrapper>
       <div className="">
         <Navbar />
-        <div className="grup" id="list">
-          <div className="parent-flex">
+        {/* <div className="grup" id="list">
+          <div className="parent-flex"> */}
+          <div class="container containerCard mb-4 " >
+            <div class="row cardRow">
             {searchData.length > 0 &&
               searchData.map((breja) => {
                 return (
-                  <div className="flex-item" key={breja.id}>
+                  
                     <Card
+                      key={breja.id}
                       id={breja.id}
                       title={breja.name}
                       image={breja.image}
                       note={breja.note}
                       star={breja.star}
+                     
+                      
                     />
+                 
+                    );
+                  })}
                   </div>
-                );
-              })}
-          </div>
-        </div>
+                </div>
       </div>
     </Wrapper>
   );
 }
 
 const Wrapper = styled.main`
-  .grup {
-    padding-top: 4vw;
-  }
 
-  .parent-flex {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-top: 4vh;
-  }
-
-  .flex-item {
-  }
 `;
 
 export default List;

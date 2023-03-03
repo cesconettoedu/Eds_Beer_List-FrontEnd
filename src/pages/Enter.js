@@ -25,18 +25,18 @@ function Enter() {
       <div className="container responsive" 
       //  style={myStyle}
       >
-        <div className="col text-center py-5">
+        <div className="col text-center ">
           
-          <h1 className="py-5"> Ed's Beer List</h1>
+          <h1 className="pt-3"> Ed's Beer List</h1>
           
           <img src={logo} alt="edlogo" className="edlogo" />
           
-          <div className="py-5">
+           <img src={cherrs} alt="edlogo" className="edlogo" />
+          <div className="">
             <Link to="/list">
-              <div className="btn">ENTER</div>
+              <div className="btn w-100">ENTER</div>
             </Link>
           </div>
-           <img src={cherrs} alt="edlogo" className="edlogo" />
         
         </div>
       </div>

@@ -91,6 +91,7 @@ function AddBeer({addre}) {
             placeholder="Picture address"
             onChange={(e) => setImage(e.target.value)}
             value={image || ""}
+           
           />
           </div>   
 

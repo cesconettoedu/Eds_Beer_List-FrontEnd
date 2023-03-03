@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { Enter, List, AddBeer } from './pages';
+import { Enter, List, AddBeer, SingleBeer } from './pages';
 
 function App() {
 
@@ -11,6 +11,7 @@ function App() {
         <Route path='/' element={<Enter />} />
         <Route path='/list' element={<List addre={addre} />} />
         <Route path='/add' element={<AddBeer addre={addre}/>} />
+        <Route path='/:id' element={<SingleBeer addre={addre}/>} />
       </Routes>
     </Router>
   );

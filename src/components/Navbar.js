@@ -49,8 +49,8 @@ function Navbar() {
                 <a href="/list" className="nav-link">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    width="40"
-                    height="40"
+                    width="30"
+                    height="30"
                     fill="currentColor"
                     className="bi bi-emoji-smile"
                     viewBox="0 0 16 16"
@@ -67,8 +67,8 @@ function Navbar() {
                 <a href="/add" className="nav-link">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    width="40"
-                    height="40"
+                     width="30"
+                    height="30"
                     fill="currentColor"
                     className="bi bi-gear-wide-connected"
                     viewBox="0 0 16 16"
@@ -84,8 +84,8 @@ function Navbar() {
                 <a href="/" className="nav-link">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    width="40"
-                    height="40"
+                    width="30"
+                    height="30"
                     fill="currentColor"
                     className="bi bi-folder2-open"
                     viewBox="0 0 16 16"

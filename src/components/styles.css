@@ -1,0 +1,44 @@
+.containerCard {
+  margin-top: 75px;
+}
+
+.cardRow {
+  margin-right: 7px;
+}
+
+.card {
+  max-width: 400px;
+  display: flex;
+  flex-direction: row;
+  background-color: chocolate;
+}
+
+.card img {
+  max-width: 160px;
+ 
+}
+
+.card-text {
+  font-size: 0.9em;
+}
+
+@media(min-width:491px) {
+  .card {
+    max-width: 195px;
+    flex-direction: column;
+  }
+
+  .img-square {
+    width: 76%;
+    height: 169px;
+  }
+
+  .card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    width: 100%;
+        
+
+  }
+}
