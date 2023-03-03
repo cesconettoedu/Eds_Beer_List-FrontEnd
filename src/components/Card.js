@@ -43,10 +43,15 @@ function CardBeer({ id, title, image, note, star}) {
     navigate(`/${id}`)
   }
 
-// just for test
- const casa = () => {
-    navigate(`/`)
+
+  
+// just for test  , but will be link to edit or delete
+ const casa = (event) => {
+  navigate(`/`)
+  event.stopPropagation();
   }
+
+
 
 
   useEffect(() => {
@@ -72,19 +77,20 @@ function CardBeer({ id, title, image, note, star}) {
         </div>
       </div> */}
     
-        <div class="card m-2 align-items-center "  key={id} onClick={() => singleBeer(id)}>
-          <div class="col-4 img-square">
-            <img src={image} class="card-img-top img-fluid rounded pt-1 pb-1" alt="Descrição imagem"/>
+        <div className="card m-2 align-items-center "  key={id} onClick={() => singleBeer(id)}>
+          <div className="col-4 img-square">
+            <img src={image} className="card-img-top img-fluid rounded pt-1 pb-1" alt="Descrição imagem"/>
           </div>
-          <div class="col-6 card-body d-flex  flex-column  align-items-center">
-            <h2 class="card-title">{title}</h2>
-            <p class="card-text">{note}</p>
-            <div class="mugs">
-            <img src={stars} class="card-img-top rounded p-1" alt="Descrição imagem"/>
+          <div className="col-6 card-body d-flex  flex-column  align-items-center">
+            <h2 className="card-title">{title}</h2>
+            <p className="card-text">{note}</p>
+            <div className="mugs">
+            <img src={stars} className="card-img-top rounded p-1" alt="Descrição imagem"/>
             </div>
           </div>
-          <i class="bi bi-three-dots-vertical pt-2 " onClick={() => casa()}></i>
+          <button type="button" className="bi bi-three-dots-vertical pt-2 " onClick={(event) => casa(event)}></button>
         </div>
+  
   
     </>
   );
