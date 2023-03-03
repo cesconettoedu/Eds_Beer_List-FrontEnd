@@ -12,6 +12,7 @@
   flex-direction: row;
   cursor: pointer;
   background: linear-gradient(90deg, #d5cb0f 0%,  #ff9500 100%);
+  position: relative;
 }
 
 .card img {
@@ -26,6 +27,8 @@
 .bi-three-dots-vertical {
   align-self: self-start;
   font-size: 26px;
+  position: absolute;
+  right: 10px;
 }
 
 @media(min-width:491px) {
@@ -48,5 +51,6 @@
 
     .bi-three-dots-vertical {
       align-self: end;
+      right: 4px;
     }
 }
