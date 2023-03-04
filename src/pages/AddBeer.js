@@ -41,8 +41,6 @@ function AddBeer({addre}) {
       console.log(body);  
       axios.post(addre + `/add`, body)
        .then((response) => {
-         console.log("addddddddd");
-         alert("Beer Added");
          navigate(`/list`); 
          refresh();
         
