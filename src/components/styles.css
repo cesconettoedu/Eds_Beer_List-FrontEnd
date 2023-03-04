@@ -17,7 +17,9 @@
 
 .card img {
   max-width: 160px;
-    object-fit: contain;
+  max-height: 160px;
+  min-height: 70px;
+  object-fit: contain;
 }
 
 .card-text {

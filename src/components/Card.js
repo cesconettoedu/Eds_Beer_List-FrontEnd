@@ -61,6 +61,7 @@ function CardBeer({addre, id, title, image, note, star}) {
      try {
       const choice = window.confirm("Are you sure you want to delete this BEER ?")
       if(choice) {
+        
         await axios.delete(addre + `/${id}`); 
         refresh();
       }     
@@ -82,7 +83,7 @@ function CardBeer({addre, id, title, image, note, star}) {
   
         <div className="card m-2 align-items-center "  key={id} onClick={() => singleBeer(id)}>
           <div className="col-4 img-square">
-            <img src={image} className="card-img-top img-fluid rounded pt-1 pb-1" alt="Descrição imagem"/>
+            <img src={image} className="card-img-top img-fluid rounded pt-1 pb-1" alt="Image beer"/>
           </div>
           <div className="col-6 card-body d-flex  flex-column  align-items-center">
             <h2 className="card-title">{title}</h2>
