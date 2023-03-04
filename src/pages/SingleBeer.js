@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import axios from "axios";
 import { Card } from "../components";
 
@@ -9,18 +9,26 @@ function SingleBeer({addre}) {
   
   const [breja, setBreja] = useState()
   let { id } = useParams();
+  const navigate = useNavigate();
+
 
   async function single() {
-    console.log("aaaaaaaaa:", id);
     try {
       const res = await axios.get(addre + `/${id}`);
-       console.log("bbbbbbbbbb", res.data[0]);
       setBreja(res.data[0]);  
-      console.log(breja);
     } catch (err) {
       console.error(err.message);
     }
   }
+
+
+//just for comoditi , i will change
+const casa = (event) => {
+ navigate(`/list`);  
+  event.stopPropagation();
+  }
+
+
 
   useEffect(() => {
    single();
@@ -40,6 +48,7 @@ function SingleBeer({addre}) {
           star={breja.star}
         />         
       )}
+      <button type="button" className="btn btn-primary" onClick={(event) => casa(event)}>Return</button>
     </>
   )
 }

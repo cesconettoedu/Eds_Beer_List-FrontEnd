@@ -40,6 +40,7 @@ function List({addre}) {
                       image={breja.image}
                       note={breja.note}
                       star={breja.star}
+                      addre={addre}
                     />
                  
                     );

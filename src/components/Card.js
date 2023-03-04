@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import './styles.css';
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 import mug0 from "../assets/mugs/00mugs.png"
 import mug1 from "../assets/mugs/01mugs.png"
@@ -10,11 +11,13 @@ import mug4 from "../assets/mugs/04mugs.png"
 import mug5 from "../assets/mugs/05mugs.png"
 
 
-function CardBeer({ id, title, image, note, star}) {
+function CardBeer({addre, id, title, image, note, star}) {
   
+ console.log(addre);
+
   const [stars, setStars] = useState();
   const navigate = useNavigate();
-
+  const refresh = () => window.location.reload(true)  //refresh a page
 
   const StarClick = (x) => {
 
@@ -44,13 +47,27 @@ function CardBeer({ id, title, image, note, star}) {
   }
 
 
-  
-// just for test  , but will be link to edit or delete
- const casa = (event) => {
-  navigate(`/`)
+ 
+//used to stop the father be clicked
+ const editDel = (event) => {
+  // navigate(`/`)  just for test propouse
   event.stopPropagation();
   }
+  
 
+
+ // To delete a beer
+  async function del(id) {
+     try {
+      const res = await axios.delete(addre + `/${id}`); 
+      refresh();
+      
+     } catch (err) {
+       console.error(err.message);
+     }
+   }
+
+  
 
   useEffect(() => {
     StarClick(stars)
@@ -72,7 +89,22 @@ function CardBeer({ id, title, image, note, star}) {
             <img src={stars} className="card-img-top rounded p-1" alt="Descrição imagem"/>
             </div>
           </div>
-          <i type="button" className="bi bi-three-dots-vertical pt-2" onClick={(event) => casa(event)}></i>
+         
+          <div class="dropdown mb-4 dropstart">
+            <a
+              class="bi bi-three-dots-vertical "
+              role="button"
+              id="dropdown-direita"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+              onClick={(event) => editDel(event)}
+              ></a>
+            <ul class="dropdown-menu" aria-labelledby="dropdown-direita" onClick={(event) => editDel(event)}>
+              <li><a href="#" class="dropdown-item" onClick={() => del(id)}>Delete</a></li>
+              <li><a href="#" class="dropdown-item">Edit</a></li>
+            </ul>
+          </div>
+
         </div>
   
   
