@@ -59,12 +59,17 @@ function CardBeer({addre, id, title, image, note, star}) {
  // To delete a beer
   async function del(id) {
      try {
-      const choice = window.confirm("Are you sure you want to delete this BEER ?")
-      if(choice) {
-        
-        await axios.delete(addre + `/${id}`); 
-        refresh();
-      }     
+      // const choice = window.confirm("Are you sure you want to delete this BEER ?")
+      // if(choice) {
+
+      //   await axios.delete(addre + `/${id}`); 
+      //   refresh();
+      // }
+
+      
+      await axios.delete(addre + `/${id}`); 
+      refresh();
+      
      } catch (err) {
        console.error(err.message);
      }
@@ -75,8 +80,6 @@ function CardBeer({addre, id, title, image, note, star}) {
   useEffect(() => {
     StarClick(stars)
   }, []);
-
-
 
   return (
     <>
