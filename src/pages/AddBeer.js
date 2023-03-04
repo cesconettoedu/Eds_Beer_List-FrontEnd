@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { Navbar } from "../components";
+import { useNavigate } from 'react-router-dom';
+
 import Card from "../components/Card";
 import mug from "../assets/mugs/beerIconFull.png";
 import mug0 from "../assets/mugs/00mugs.png"
@@ -18,6 +20,9 @@ function AddBeer({addre}) {
   const [title, setTitle] = useState("");
   const [note, setNote] = useState("");
   const [star, setStar] = useState(0);
+  const navigate = useNavigate();
+  const refresh = () => window.location.reload(true)  //refresh a page
+
 
     
  
@@ -37,7 +42,9 @@ function AddBeer({addre}) {
       axios.post(addre + `/add`, body)
        .then((response) => {
          console.log("addddddddd");
-         alert("Beer Added")
+         alert("Beer Added");
+         navigate(`/list`); 
+         refresh();
         
        })
        } catch (err) {
