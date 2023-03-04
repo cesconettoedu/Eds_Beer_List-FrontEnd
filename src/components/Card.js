@@ -52,8 +52,6 @@ function CardBeer({ id, title, image, note, star}) {
   }
 
 
-
-
   useEffect(() => {
     StarClick(stars)
   }, []);
@@ -62,21 +60,7 @@ function CardBeer({ id, title, image, note, star}) {
 
   return (
     <>
-      {/* <div className="allCard" key={id}>
-        <div className="card" style={{ width: "18rem" }} onClick={() => singleBeer(id)}>
-          <h1 className="card-title text-center">{title}</h1>
-          <img src={image} className="card-img-top " alt="..."></img>
-          <div className="card-body">
-            <p className="card-text">{note}</p>
-            <div className="">
-              <img src={stars} alt="stars"  
-                width="240"
-                height="60"/>
-            </div>
-          </div>
-        </div>
-      </div> */}
-    
+  
         <div className="card m-2 align-items-center "  key={id} onClick={() => singleBeer(id)}>
           <div className="col-4 img-square">
             <img src={image} className="card-img-top img-fluid rounded pt-1 pb-1" alt="Descrição imagem"/>
@@ -88,14 +72,12 @@ function CardBeer({ id, title, image, note, star}) {
             <img src={stars} className="card-img-top rounded p-1" alt="Descrição imagem"/>
             </div>
           </div>
-          <button type="button" className="bi bi-three-dots-vertical pt-2 " onClick={(event) => casa(event)}></button>
+          <i type="button" className="bi bi-three-dots-vertical pt-2" onClick={(event) => casa(event)}></i>
         </div>
   
   
     </>
   );
-}
-
-;
+};
 
 export default CardBeer;

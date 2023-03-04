@@ -28,14 +28,11 @@ function List({addre}) {
     <Wrapper>
       <div className="">
         <Navbar />
-        {/* <div className="grup" id="list">
-          <div className="parent-flex"> */}
-          <div class="container containerCard mb-4 " >
-            <div class="row cardRow">
+          <div className="container containerCard mb-4 " >
+            <div className="row cardRow">
             {searchData.length > 0 &&
               searchData.map((breja) => {
                 return (
-                  
                     <Card
                       key={breja.id}
                       id={breja.id}
@@ -43,14 +40,12 @@ function List({addre}) {
                       image={breja.image}
                       note={breja.note}
                       star={breja.star}
-                     
-                      
                     />
                  
                     );
                   })}
-                  </div>
-                </div>
+            </div>
+          </div>
       </div>
     </Wrapper>
   );
