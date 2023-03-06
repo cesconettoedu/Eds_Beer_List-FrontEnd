@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { Navbar } from "../components";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 
 import Card from "../components/Card";
 import mug from "../assets/mugs/beerIconFull.png";
@@ -15,48 +15,83 @@ import mug5 from "../assets/mugs/05mugs.png"
 
 import axios from "axios";
 
-function AddBeer({addre}) {
+function AddBeer({addre, edit }) {
   const [image, setImage] = useState("");
   const [title, setTitle] = useState("");
   const [note, setNote] = useState("");
   const [star, setStar] = useState(0);
   const navigate = useNavigate();
   const refresh = () => window.location.reload(true)  //refresh a page
+  const [breja, setBreja] = useState()
+  let { id } = useParams();
 
-
+  
     
  
 // add beer
   const handleSubmit = async (e) => {
     e.preventDefault()
     const body = {
-     
       title,
       image,
       note,
       star
     }
 
-    try {    
-      console.log(body);  
-      axios.post(addre + `/add`, body)
-       .then((response) => {
-         navigate(`/list`); 
-         refresh();
-        
+    if(edit){
+      try {
+        axios.put(addre + `/${id}`,body
+        )
+          .then((res) => {
+            single(id)
+            navigate('/all')
+          })
+      } catch (err) {
+        console.error(err.message);
+      }
+    } else {
+        try {    
+          axios.post(addre + `/add`, body)
+            .then((response) => {
+            navigate(`/list`); 
+            refresh();
        })
        } catch (err) {
          console.error(err.response);
-       }
-      
+       }   
   }
+}
+
+
+
+  //load a single beer to edit
+  async function single() {
+    try {
+      const res = await axios.get(addre + `/${id}`);
+      setTitle(res.data[0].name);
+      setImage(res.data[0].image);
+      setNote(res.data[0].note);
+      setStar(res.data[0].star);
+    } catch (err) {
+       console.error(err.message);
+    }
+  }
+
+
+
+ useEffect(() => {
+  
+  if(edit){
+    single();
+  }
+  }, []);
 
 
 
   return (
     <Wrapper>
       <Navbar />
-
+     
       <div className="center">
         <Card 
           image={image} 
@@ -65,9 +100,7 @@ function AddBeer({addre}) {
           star={star}
         />
       </div>
-
       <br />
-
       <div className="container d-flex justify-content-center">
         <form onSubmit={handleSubmit}>
           <div className="mb-3">
@@ -133,8 +166,14 @@ function AddBeer({addre}) {
 
           </div>  
 
-        
+        {edit &&
+          <button className=' btn include' type="submit">Edit Beer</button>
+        }
+        {!edit &&
           <button className=' btn include' type="submit">Add Beer</button>
+        }
+
+
         </form>
       </div>
     </Wrapper>

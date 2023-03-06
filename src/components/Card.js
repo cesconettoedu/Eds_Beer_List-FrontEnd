@@ -13,11 +13,10 @@ import mug5 from "../assets/mugs/05mugs.png"
 
 function CardBeer({addre, id, title, image, note, star}) {
   
- console.log(addre);
-
   const [stars, setStars] = useState();
   const navigate = useNavigate();
   const refresh = () => window.location.reload(true)  //refresh a page
+  
 
   const StarClick = (x) => {
 
@@ -48,34 +47,39 @@ function CardBeer({addre, id, title, image, note, star}) {
 
 
  
-//used to stop the father be clicked
- const editDel = (event) => {
+// used to stop the father be clicked
+const editDel = (event) => {
   // navigate(`/`)  just for test propouse
   event.stopPropagation();
-  }
+}
   
-
 
  // To delete a beer
   async function del(id) {
      try {
       // const choice = window.confirm("Are you sure you want to delete this BEER ?")
       // if(choice) {
-
       //   await axios.delete(addre + `/${id}`); 
       //   refresh();
       // }
+    await axios.delete(addre + `/${id}`); 
+      refresh();     
+    } catch (err) {
+      console.error(err.message);
+    }
+  }
 
-      
-      await axios.delete(addre + `/${id}`); 
-      refresh();
-      
-     } catch (err) {
-       console.error(err.message);
-     }
-   }
 
   
+
+  function edit(id) {
+   
+    navigate(`/edit/${id} `); 
+   
+    
+  }
+
+
 
   useEffect(() => {
     StarClick(stars)
@@ -83,7 +87,7 @@ function CardBeer({addre, id, title, image, note, star}) {
 
   return (
     <>
-  
+     
         <div className="card m-2 align-items-center "  key={id} onClick={() => singleBeer(id)}>
           <div className="col-4 img-square">
             <img src={image} className="card-img-top img-fluid rounded pt-1 pb-1" alt="Image beer"/>
@@ -107,13 +111,11 @@ function CardBeer({addre, id, title, image, note, star}) {
               ></a>
             <ul class="dropdown-menu" aria-labelledby="dropdown-direita" onClick={(event) => editDel(event)}>
               <li><a href="#" class="dropdown-item" onClick={() => del(id)}>Delete</a></li>
-              <li><a href="#" class="dropdown-item">Edit</a></li>
+              <li><a href="#" class="dropdown-item" onClick={() => edit(id)}>Edit</a></li>
             </ul>
           </div>
-
         </div>
-  
-  
+     
     </>
   );
 };

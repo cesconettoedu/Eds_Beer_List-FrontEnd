@@ -23,6 +23,7 @@ function SingleBeer({addre}) {
   }
 
 
+
 //just for comoditi , i will change
 const casa = (event) => {
  navigate(`/list`);  
