@@ -47,9 +47,9 @@ function CardBeer({addre, id, title, image, note, star}) {
 
 
  
-// used to stop the father be clicked
+
 const editDel = (event) => {
-  // navigate(`/`)  just for test propouse
+  // used to stop the father be clicked
   event.stopPropagation();
 }
   
@@ -70,16 +70,9 @@ const editDel = (event) => {
   }
 
 
-  
-
   function edit(id) {
-   
-    navigate(`/edit/${id} `); 
-   
-    
+    navigate(`/edit/${id} `);    
   }
-
-
 
   useEffect(() => {
     StarClick(stars)

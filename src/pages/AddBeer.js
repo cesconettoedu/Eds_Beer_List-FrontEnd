@@ -11,6 +11,7 @@ import mug2 from "../assets/mugs/02mugs.png"
 import mug3 from "../assets/mugs/03mugs.png"
 import mug4 from "../assets/mugs/04mugs.png"
 import mug5 from "../assets/mugs/05mugs.png"
+import mugEmp from "../assets/mugs/beerIconBlack.png"
 
 
 import axios from "axios";
@@ -20,14 +21,15 @@ function AddBeer({addre, edit }) {
   const [title, setTitle] = useState("");
   const [note, setNote] = useState("");
   const [star, setStar] = useState(0);
+ 
   const navigate = useNavigate();
   const refresh = () => window.location.reload(true)  //refresh a page
-  const [breja, setBreja] = useState()
   let { id } = useParams();
 
-  
-    
  
+console.log(star);
+
+
 // add beer
   const handleSubmit = async (e) => {
     e.preventDefault()
@@ -111,7 +113,7 @@ function AddBeer({addre, edit }) {
             className="form-control form-control-lg my-1"
             type="text"
             title="title"
-            maxLength="50"
+            maxLength="10"
             placeholder="Beer Name"
             onChange={(e) => setTitle(e.target.value)}
             value={title || ""}
@@ -143,7 +145,7 @@ function AddBeer({addre, edit }) {
             note="note"
             placeholder="Note"
             onChange={(e) => setNote(e.target.value)}
-             value={note || ""}
+            value={note || ""}
           />
           </div> 
 
@@ -153,8 +155,6 @@ function AddBeer({addre, edit }) {
             <label htmlFor="taste" className="form-label">
              Taste
             </label>
-            
-            {/* ainda nao ta funcionando , conflito depois que coloquei no card na lista */}
             <div>
               <img src={mug} className="mug" alt="glass" onClick={() => setStar(1)}/>
               <img src={mug} className="mug" alt="glass" onClick={() => setStar(2)}/>
@@ -162,9 +162,8 @@ function AddBeer({addre, edit }) {
               <img src={mug} className="mug" alt="glass" onClick={() => setStar(4)}/>
               <img src={mug} className="mug" alt="glass" onClick={() => setStar(5)}/>
             </div>
-          
-
           </div>  
+ 
 
         {edit &&
           <button className=' btn include' type="submit">Edit Beer</button>
@@ -175,6 +174,7 @@ function AddBeer({addre, edit }) {
 
 
         </form>
+        
       </div>
     </Wrapper>
   );
