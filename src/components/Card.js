@@ -76,7 +76,7 @@ const editDel = (event) => {
 
   useEffect(() => {
     StarClick(stars)
-  }, []);
+  }, [star]);
 
   return (
     <>
@@ -89,7 +89,7 @@ const editDel = (event) => {
             <h2 className="card-title">{title}</h2>
             <p className="card-text">{note}</p>
             <div className="mugs">
-            <img src={stars} className="card-img-top rounded p-1" alt="Descrição imagem"/>
+              <img src={stars} className="card-img-top rounded p-1" alt="Descrição imagem"/>
             </div>
           </div>
          
