@@ -410,6 +410,7 @@ ul {
 }
 
 .form-label {
+  color: var(--clr-complement-1);
   display: block;
   font-size: var(--smallText);
   margin-bottom: 0.5rem;

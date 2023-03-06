@@ -5,13 +5,6 @@ import { useNavigate, useParams } from 'react-router-dom';
 
 import Card from "../components/Card";
 import mug from "../assets/mugs/beerIconFull.png";
-import mug0 from "../assets/mugs/00mugs.png"
-import mug1 from "../assets/mugs/01mugs.png"
-import mug2 from "../assets/mugs/02mugs.png"
-import mug3 from "../assets/mugs/03mugs.png"
-import mug4 from "../assets/mugs/04mugs.png"
-import mug5 from "../assets/mugs/05mugs.png"
-import mugEmp from "../assets/mugs/beerIconBlack.png"
 
 
 import axios from "axios";
@@ -26,8 +19,6 @@ function AddBeer({addre, edit }) {
   const refresh = () => window.location.reload(true)  //refresh a page
   let { id } = useParams();
 
- 
-console.log(star);
 
 
 // add beer
@@ -46,7 +37,8 @@ console.log(star);
         )
           .then((res) => {
             single(id)
-            navigate('/all')
+            navigate('/list')
+            refresh();
           })
       } catch (err) {
         console.error(err.message);
@@ -117,6 +109,7 @@ console.log(star);
             placeholder="Beer Name"
             onChange={(e) => setTitle(e.target.value)}
             value={title || ""}
+            required
           />
           </div>
 
@@ -143,6 +136,7 @@ console.log(star);
             className="form-control form-control-lg my-1"
             type="text"
             note="note"
+            maxLength="50"
             placeholder="Note"
             onChange={(e) => setNote(e.target.value)}
             value={note || ""}
@@ -155,7 +149,7 @@ console.log(star);
             <label htmlFor="taste" className="form-label">
              Taste
             </label>
-            <div>
+            <div className="text-center">
               <img src={mug} className="mug" alt="glass" onClick={() => setStar(1)}/>
               <img src={mug} className="mug" alt="glass" onClick={() => setStar(2)}/>
               <img src={mug} className="mug" alt="glass" onClick={() => setStar(3)}/>
@@ -184,7 +178,7 @@ const Wrapper = styled.main`
   .center {
     display: flex;
     justify-content: center;
-    padding-top: 100px;
+    padding-top: 65px;
   }
 
   .formAll {
@@ -195,12 +189,15 @@ const Wrapper = styled.main`
   }
 
   .mug {
-    width: 4rem;
-    height: 5rem;
+    width: 3.3rem;
+    height: 4.3rem;
     cursor: pointer;
+    opacity: 0.3;
   }
   
-
+  .mug:hover {
+    opacity: 100;
+  }
 
 
 
