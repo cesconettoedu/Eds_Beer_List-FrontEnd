@@ -41,25 +41,24 @@ function CardBeer({addre, id, title, image, note, star}) {
   }
 
 
-
+  
+  
   const singleBeer = (id) => {
     navigate(`/${id}`)
   }
-
-
+  
+  
 const editDel = (event) => {
   // used to stop the father be clicked
   event.stopPropagation();
 }
-  
 
 
 
-  function edit(id) {
-    navigate(`/edit/${id} `);    
-  }
+function edit(id) {
+  navigate(`/edit/${id} `);    
+}
 
-  
   useEffect(() => {
     StarClick(stars)
   }, [star]);
