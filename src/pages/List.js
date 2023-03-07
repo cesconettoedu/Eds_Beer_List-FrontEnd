@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
-import { Card, Navbar } from "../components";
+import { Card, Navbar, AddBtnBeer } from "../components";
 import axios from "axios";
 
 
@@ -28,6 +28,7 @@ function List({addre}) {
     <Wrapper>
       <div className="">
         <Navbar />
+        <AddBtnBeer />
           <div className="container containerCard mb-4 " >
             <div className="row cardRow">
             {searchData.length > 0 &&

@@ -102,9 +102,31 @@ const editDel = (event) => {
               onClick={(event) => editDel(event)}
               ></a>
             <ul className="dropdown-menu" aria-labelledby="dropdown-direita" onClick={(event) => editDel(event)}>
-              <li><a href="#" className="dropdown-item" onClick={() => del(id)}>Delete</a></li>
+              {/* <li><a href="#" className="dropdown-item" onClick={() => del(id)}>Delete</a></li> */}
+
+              <li><a href="#" className="dropdown-item" data-bs-toggle="modal" data-bs-target="#exampleModal"
+              
+             >Delete</a></li>
+
               <li><a href="#" className="dropdown-item" onClick={() => edit(id)}>Edit</a></li>
+              
             </ul>
+          </div>
+        </div>
+
+
+        {/* Modal tyo confirm delete */}
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-body fs-6">
+                Do you want remove this Beer ????
+              </div>
+              <div class="modal-footer justify-content-around">
+                <button type="button" class="btn btn-primary">Yes</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+              </div>
+            </div>
           </div>
         </div>
      
