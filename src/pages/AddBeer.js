@@ -12,7 +12,7 @@ import axios from "axios";
 function AddBeer({addre, edit }) {
   const [image, setImage] = useState("");
   const [title, setTitle] = useState("");
-  const [note, setNote] = useState("");
+  const [note, setNote] = useState("No comments yet");
   const [star, setStar] = useState(0);
  
   const navigate = useNavigate();
