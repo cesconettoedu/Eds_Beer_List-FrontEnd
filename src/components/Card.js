@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import './styles.css';
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
+import Modal from "./Modal";
 
 import mug0 from "../assets/mugs/00mugs.png"
 import mug1 from "../assets/mugs/01mugs.png"
@@ -16,7 +16,7 @@ function CardBeer({addre, id, title, image, note, star}) {
   const [stars, setStars] = useState();
   const navigate = useNavigate();
   const refresh = () => window.location.reload(true)  //refresh a page
-  
+  const [isOpen, setIsOpen] = useState(false)
 
   const StarClick = (x) => {
 
@@ -53,22 +53,6 @@ const editDel = (event) => {
 }
   
 
- // To delete a beer
-  async function del(id) {
-     try {
-      // const choice = window.confirm("Are you sure you want to delete this BEER ?")
-      // if(choice) {
-      //   await axios.delete(addre + `/${id}`); 
-      //   refresh();
-      // }
-      await axios.delete(addre + `/${id}`); 
-      navigate(`/list`);
-      refresh();
-           
-    } catch (err) {
-      console.error(err.message);
-    }
-  }
 
 
   function edit(id) {
@@ -105,33 +89,17 @@ const editDel = (event) => {
               onClick={(event) => editDel(event)}
               ></a>
             <ul className="dropdown-menu" aria-labelledby="dropdown-direita" onClick={(event) => editDel(event)}>
-              {/* <li><a href="#" className="dropdown-item" onClick={() => del(id)}>Delete</a></li> */}
-             
-              <li><a href="#" className="dropdown-item" onClick={() => del(id)}>Delete</a></li>
-
-              <li><a href="#" className="dropdown-item" onClick={() => edit(id)}>Edit</a></li>
+              <li><button className="dropdown-item" onClick={() => setIsOpen(true)} > Delete </button></li>           
+                <Modal open={isOpen} onClose={() => setIsOpen(false)}>
+                  {{id: id, addre: addre }}
+                </Modal>
+              <li><button className="dropdown-item" onClick={() => edit(id)}>Edit</button></li>
               
             </ul>
           </div>
-       
         </div>
 
-
-          {/* Modal tyo confirm delete */}
-          <div className="modal fade" id="exampleModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div className="modal-dialog">
-              <div className="modal-content">
-                <div className="modal-body fs-6">
-                  Do you want remove this Beer ????
-                </div>
-                <div className="modal-footer justify-content-around">
-                  <button type="button" className="btn btn-primary" >Yes</button>
-                  <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                </div>
-              </div>
-            </div>
-          </div>
-          
+        
      
     </>
   );
