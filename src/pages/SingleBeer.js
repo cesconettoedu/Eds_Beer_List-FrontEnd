@@ -48,6 +48,7 @@ const casa = (event) => {
           image={breja.image}
           note={breja.note}
           star={breja.star}
+          addre={addre}
         />         
       )}
       <button type="button" className="btn btn-primary" onClick={(event) => casa(event)}>Return</button>

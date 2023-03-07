@@ -72,6 +72,12 @@ function AddBeer({addre, edit }) {
   }
 
 
+//just to return to list
+const List = (event) => {
+ navigate(`/list`);  
+  }
+
+
 
  useEffect(() => {
   
@@ -160,10 +166,16 @@ function AddBeer({addre, edit }) {
  
 
         {edit &&
+        <div className="d-flex justify-content-around">
           <button className=' btn include' type="submit">Edit Beer</button>
+          <button className=' btn include' type="button" onClick={() => List()} >Cancel</button>
+        </div>
         }
         {!edit &&
+        <div className="d-flex justify-content-around">
           <button className=' btn include' type="submit">Add Beer</button>
+          <button className=' btn include' type="button" onClick={() => List()} >Cancel</button>
+        </div>
         }
 
 
