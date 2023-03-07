@@ -90,6 +90,7 @@ function edit(id) {
             <ul className="dropdown-menu" aria-labelledby="dropdown-direita" onClick={(event) => editDel(event)}>
               <li><button className="dropdown-item" onClick={() => setIsOpen(true)} > Delete </button></li>           
                 <Modal open={isOpen} onClose={() => setIsOpen(false)}>
+                  
                   {{id: id, addre: addre }}
                 </Modal>
               <li><button className="dropdown-item" onClick={() => edit(id)}>Edit</button></li>

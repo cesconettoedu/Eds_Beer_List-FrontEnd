@@ -5,12 +5,15 @@ import { useNavigate } from "react-router-dom";
 
 const MODAL_STYLES ={
   position: 'fixed',
-  top: '240%',
-  left: '60%',
+  borderRadius: '7px',
+  top: '5em',
+  left: '4em',
   transform: 'translate(-50%, -50%)',
   backgroundColor: '#FFF',
-  padding:'50px',
-  zIndex: 1000
+  padding:'20px',
+  zIndex: 1000,
+  display: 'flex',
+  flexDirection: 'column'
 }
 
 const OVERLAY_STYLES = {
@@ -48,8 +51,9 @@ export default function Modal({ open, children, onClose }) {
     <>
       <div style={OVERLAY_STYLES}>
         <div style={MODAL_STYLES}>
-          <button className='' onClick={onClose}>Cancel</button>
-          <button className='' onClick={() => del()}>Yes</button>
+          Sure ?
+          <button className='btn mb-1 mt-1' onClick={onClose}>Cancel</button>
+          <button className='btn' onClick={() => del()}>Yes</button>
         </div>
       </div>
     </>
