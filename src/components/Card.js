@@ -92,18 +92,18 @@ const editDel = (event) => {
             </div>
           </div>
          
-          <div class="dropdown mb-4 dropstart">
+          <div className="dropdown mb-4 dropstart">
             <a
-              class="bi bi-three-dots-vertical "
+              className="bi bi-three-dots-vertical "
               role="button"
               id="dropdown-direita"
               data-bs-toggle="dropdown"
               aria-expanded="false"
               onClick={(event) => editDel(event)}
               ></a>
-            <ul class="dropdown-menu" aria-labelledby="dropdown-direita" onClick={(event) => editDel(event)}>
-              <li><a href="#" class="dropdown-item" onClick={() => del(id)}>Delete</a></li>
-              <li><a href="#" class="dropdown-item" onClick={() => edit(id)}>Edit</a></li>
+            <ul className="dropdown-menu" aria-labelledby="dropdown-direita" onClick={(event) => editDel(event)}>
+              <li><a href="#" className="dropdown-item" onClick={() => del(id)}>Delete</a></li>
+              <li><a href="#" className="dropdown-item" onClick={() => edit(id)}>Edit</a></li>
             </ul>
           </div>
         </div>
