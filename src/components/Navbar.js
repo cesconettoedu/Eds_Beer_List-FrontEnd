@@ -110,6 +110,11 @@ const Wrapper = styled.main`
     place-content: center;
   }
 
+  .navbar-nav {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
   .backnav {
     background-color: rgb(237, 239, 241);
   }
