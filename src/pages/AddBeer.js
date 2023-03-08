@@ -153,7 +153,7 @@ const List = (event) => {
 
           <div className="mb-3">
             <label htmlFor="taste" className="form-label">
-             Taste
+             Score
             </label>
             <div className="text-center">
               <img src={mug} className="mug" alt="glass" onClick={() => setStar(1)}/>
@@ -167,7 +167,7 @@ const List = (event) => {
 
         {edit &&
         <div className="d-flex justify-content-around">
-          <button className=' btn include' type="submit">Edit Beer</button>
+          <button className=' btn include' type="submit">Confirm</button>
           <button className=' btn include' type="button" onClick={() => List()} >Cancel</button>
         </div>
         }

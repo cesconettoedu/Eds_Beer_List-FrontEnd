@@ -15,7 +15,6 @@ function CardBeer({addre, id, title, image, note, star}) {
   
   const [stars, setStars] = useState();
   const navigate = useNavigate();
-  const refresh = () => window.location.reload(true)  //refresh a page
   const [isOpen, setIsOpen] = useState(false)
 
   const StarClick = (x) => {
@@ -48,16 +47,16 @@ function CardBeer({addre, id, title, image, note, star}) {
   }
   
   
-const editDel = (event) => {
-  // used to stop the father be clicked
-  event.stopPropagation();
-}
+  const editDel = (event) => {
+    // used to stop the father be clicked
+    event.stopPropagation();
+  }
 
 
+  function edit(id) {
+    navigate(`/edit/${id} `);    
+  }
 
-function edit(id) {
-  navigate(`/edit/${id} `);    
-}
 
   useEffect(() => {
     StarClick(stars)
@@ -89,12 +88,11 @@ function edit(id) {
               ></a>
             <ul className="dropdown-menu" aria-labelledby="dropdown-direita" onClick={(event) => editDel(event)}>
               <li><button className="dropdown-item" onClick={() => setIsOpen(true)} > Delete </button></li>           
-                <Modal open={isOpen} onClose={() => setIsOpen(false)}>
-                  
-                  {{id: id, addre: addre }}
-                </Modal>
+                    <Modal open={isOpen} onClose={() => setIsOpen(false)}>
+                      {/* inside here is pass as a children */}
+                      {{id: id, addre: addre }}
+                    </Modal>
               <li><button className="dropdown-item" onClick={() => edit(id)}>Edit</button></li>
-              
             </ul>
           </div>
         </div>

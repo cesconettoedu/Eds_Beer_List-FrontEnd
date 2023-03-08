@@ -78,10 +78,12 @@ const Wrapper = styled.main`
     width: 100%;
   }
 
-    .dropstart {
-      align-self: end;
-      right: 4px;
-    }
+  .dropstart {
+    align-self: end;
+    right: 4px;
+  }
+
+  
 
 `
 
