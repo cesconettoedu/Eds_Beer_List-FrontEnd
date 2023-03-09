@@ -1,10 +1,14 @@
 import styled from "styled-components";
 import logo from "../assets/eulogo.png";
+import Search from "./Search";
 
-function Navbar() {
+function Navbar({handleSearch}) {
 
   const myIcon = 50
   const iconSize = 22
+
+
+   
 
   return (
     <Wrapper>
@@ -25,16 +29,20 @@ function Navbar() {
           </div>
 
           {/* search */}
-          <div className="search col-6">
+          {/* <div className="search col-6">
             <input
               className="form-control mr-sm-2"
               style={{ fontSize: "1.5em" }}
               id="parameter"
               type="text"
-              // onChange={handleChange}
+              onChange={handleChange}
               placeholder="Search"
             ></input>
-          </div>
+          </div> */}
+          <Search 
+            handleSearch={handleSearch}
+          />
+
 
           {/* toggler */}
           <button
