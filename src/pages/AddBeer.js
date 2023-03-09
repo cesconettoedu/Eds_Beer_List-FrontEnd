@@ -90,17 +90,30 @@ const List = (event) => {
 
   return (
     <Wrapper>
-      <Navbar />
-     
+
       <div className="center">
+      {edit &&
         <Card 
           image={image} 
           title={title} 
           note={note}
           star={star}
+          
         />
+      }
+      {!edit &&
+        <Card 
+          image={image} 
+          title={title} 
+          note={note}
+          star={star}
+          
+        />
+      }
       </div>
+
       <br />
+
       <div className="container d-flex justify-content-center">
         <form onSubmit={handleSubmit}>
           <div className="mb-3">
@@ -144,6 +157,7 @@ const List = (event) => {
             note="note"
             maxLength="50"
             placeholder="Note"
+            onClick={() => setNote('')}
             onChange={(e) => setNote(e.target.value)}
             value={note || ""}
           />
