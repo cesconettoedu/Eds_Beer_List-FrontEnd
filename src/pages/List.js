@@ -6,6 +6,7 @@ import axios from "axios";
 
 function List({addre}) {
 
+  const [getAll, setGetAll] = useState([])
   const [searchData, setSearchData] = useState([]);
 
   
@@ -13,6 +14,7 @@ function List({addre}) {
   async function listAllBeers() {
     try {
       const res = await axios.get(addre + `/all`);
+      setGetAll(res.data);
       setSearchData(res.data);
     } catch (err) {
       console.error(err.message);
@@ -20,10 +22,13 @@ function List({addre}) {
   }
 
   const handleSearch = (typing) => {
+
+    
     if(typing === '') {
-      setSearchData(listAllBeers)
+      setSearchData(getAll)
     } else {
-      const filteredData = searchData.filter(app =>  app.name.toUpperCase().includes(typing.toUpperCase()))
+      const filteredData = getAll.filter(app =>  app.name.toUpperCase().includes(typing.toUpperCase()))
+      console.log("aaaaaaaa", filteredData);
       setSearchData(filteredData);
     }
   }
