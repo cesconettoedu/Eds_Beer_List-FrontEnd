@@ -99,6 +99,7 @@ const List = (event) => {
           note={note}
           star={star}
           
+          
         />
       }
       {!edit &&

@@ -24,10 +24,9 @@ function SingleBeer({addre}) {
 
 
 
-//just for comoditi , i will change
-const casa = (event) => {
- navigate(`/list`);  
-  event.stopPropagation();
+  const backToList = (event) => {
+    navigate(`/list`);  
+    event.stopPropagation();
   }
 
 
@@ -51,7 +50,7 @@ const casa = (event) => {
           addre={addre}
         />         
       )}
-      <button type="button" className="btn btn-primary" onClick={(event) => casa(event)}>Return</button>
+      <button type="button" className="btn btn-primary" onClick={(event) => backToList(event)}>Return</button>
     </Wrapper>
   )
 }

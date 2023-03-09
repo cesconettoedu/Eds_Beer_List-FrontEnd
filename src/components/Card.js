@@ -79,7 +79,7 @@ function CardBeer({addre, id, title, image, note, star}) {
          
           <div className="dropdown mb-4 dropstart">
             <a
-              className="bi bi-three-dots-vertical "
+              className="bi bi-three-dots-vertical"
               role="button"
               id="dropdown-direita"
               data-bs-toggle="dropdown"
