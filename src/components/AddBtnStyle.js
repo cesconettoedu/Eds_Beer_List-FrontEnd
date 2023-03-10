@@ -17,7 +17,7 @@ export const Button = styled.div`
    display: flex;
    flex-direction: column;
    position: fixed; 
-   width: 23%;
+   width: 70px;
    left: 75%;
    height: 100px;
    font-size: 1.5rem;
