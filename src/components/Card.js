@@ -73,15 +73,15 @@ function CardBeer({addre, id, title, image, note, star, notWork}) {
   return (
     <>
 
-        <div class="card m-1 align-items-center " key={id}  disabled={notWork}>
-          <div class="img-square order-xs-2" onClick={() => singleBeer(id)}>
-            <img src={image} class="card-img-top img-fluid rounded pt-1 pb-1 hide-bg" alt="Descrição imagem"/>
+        <div className="card m-1 align-items-center " key={id}  disabled={notWork}>
+          <div className="img-square order-xs-2" onClick={() => singleBeer(id)}>
+            <img src={image} className="beerimg card-img-top img-fluid rounded pt-1 pb-1 hide-bg" alt="Descrição imagem"/>
           </div>
-          <div class="p-3 card-body order-xs-3" onClick={() => singleBeer(id)}>
-            <h3 class="card-title ">{title}</h3>
-            <p class="card-text text-center">{note}</p>
-            <div class="mugs">
-              <img src={stars} class="card-img-top rounded" alt="No imagem"/>
+          <div className=" card-body order-xs-3" onClick={() => singleBeer(id)}>
+            <h3 className="card-title ">{title}</h3>
+            <p className="card-text text-center">{note}</p>
+            <div className="mugs">
+              <img src={stars} className="card-img-top rounded" alt="No imagem"/>
             </div>
           </div>
           

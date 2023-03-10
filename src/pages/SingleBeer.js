@@ -55,14 +55,18 @@ function SingleBeer({addre}) {
   )
 }
 const Wrapper = styled.main`
+{
+  text-align: -webkit-center;
+}
 .card {
-    height: 50em;
+    height: 52em;
     flex-direction: column;
+    max-width: 348px;
   }
 
   .img-square {
-    width: 76%;
-    height: 169px;
+    width: 90%;
+    height: 402px;
   }
 
   .card img {
@@ -77,13 +81,7 @@ const Wrapper = styled.main`
     width: 100%;
   }
 
-  .dropstart {
-    align-self: end;
-    right: 4px;
-  }
-
-  
-
+ 
 `
 
 export default SingleBeer

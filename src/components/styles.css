@@ -8,7 +8,6 @@
 
 .card {
   max-width: 400px;
-  max-height: 186px;
   display: flex;
   flex-direction: row;
   background: linear-gradient(90deg, #d5cb0f 0%,  #ff9500 100%);
@@ -16,7 +15,14 @@
   padding-right: 4px;
 }
 
-.card img {
+.img-square {
+  width: 76%;
+  height: 169px;
+  margin-top: 2px;
+  margin-bottom: 2px;
+}
+
+.beerimg {
   max-width: 384px;
   min-width: 97px;
   max-height: 138px;
@@ -33,10 +39,6 @@
   align-items: center;
 }
 
-.img-square {
-  width: 76%;
-  height: 169px;
-}
 
 
  .bi-three-dots-vertical {
