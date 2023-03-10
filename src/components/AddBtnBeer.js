@@ -15,7 +15,7 @@ const AddBtnBeer = () =>{
   return (
     <Button>
      <img src={add} href="/add" alt="plus" onClick={addB} />
-          Add
+          Beer
     </Button>
   );
 }
