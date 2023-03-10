@@ -8,6 +8,7 @@ import mug from "../assets/mugs/beerIconFull.png";
 
 
 import axios from "axios";
+import SingleBeer from "./SingleBeer";
 
 function AddBeer({addre, edit }) {
   const [image, setImage] = useState("");
@@ -92,25 +93,14 @@ const List = (event) => {
     <Wrapper>
 
       <div className="center">
-      {edit &&
+      
         <Card 
           image={image} 
           title={title} 
           note={note}
           star={star}
-          
-          
+          notWork={true}
         />
-      }
-      {!edit &&
-        <Card 
-          image={image} 
-          title={title} 
-          note={note}
-          star={star}
-          
-        />
-      }
       </div>
 
       <br />

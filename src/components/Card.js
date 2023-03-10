@@ -11,11 +11,11 @@ import mug4 from "../assets/mugs/04mugs.png"
 import mug5 from "../assets/mugs/05mugs.png"
 
 
-function CardBeer({addre, id, title, image, note, star}) {
+function CardBeer({addre, id, title, image, note, star, notWork}) {
   
   const [stars, setStars] = useState();
   const navigate = useNavigate();
-  const [isOpen, setIsOpen] = useState(false)
+  const [isOpen, setIsOpen] = useState(false);
 
   const StarClick = (x) => {
 
@@ -40,10 +40,10 @@ function CardBeer({addre, id, title, image, note, star}) {
   }
 
 
-  
-  
   const singleBeer = (id) => {
-    navigate(`/${id}`)
+    if(!notWork) {
+      navigate(`/${id}`)
+    }
   }
   
   
@@ -64,9 +64,8 @@ function CardBeer({addre, id, title, image, note, star}) {
 
   return (
     <>
-     
-        <div className="card m-2 align-items-center "  key={id} onClick={() => singleBeer(id)}>
-          <div className="col-4 img-square">
+        <div className="card m-2 align-items-center"  key={id}  disabled={notWork}>
+          <div className="col-4 img-square" onClick={() => singleBeer(id)}>
             <img src={image} className="card-img-top img-fluid rounded pt-1 pb-1" alt="Image beer"/>
           </div>
           <div className="col-6 card-body d-flex  flex-column  align-items-center">
@@ -77,28 +76,30 @@ function CardBeer({addre, id, title, image, note, star}) {
             </div>
           </div>
          
-          <div className="dropdown mb-4 dropstart">
+          <div className="dropdown mb-4 dropstart" >
             <a
+              type="button"
               className="bi bi-three-dots-vertical"
-              role="button"
               id="dropdown-direita"
               data-bs-toggle="dropdown"
+              data-bs-auto-close="inside"
               aria-expanded="false"
-              onClick={(event) => editDel(event)}
+              // onClick={(event) => editDel(event)}
+              disabled={notWork}
               ></a>
-            <ul className="dropdown-menu" aria-labelledby="dropdown-direita" onClick={(event) => editDel(event)}>
-              <li><button className="dropdown-item" onClick={() => setIsOpen(true)} > Delete </button></li>           
-                    <Modal open={isOpen} onClose={() => setIsOpen(false)}>
-                      {/* inside here is pass as a children */}
-                      {{id: id, addre: addre }}
-                    </Modal>
+            <ul className="dropdown-menu" aria-labelledby="dropdown-direita" >
+              <li><button className="dropdown-item"
+                            onClick={() => setIsOpen(true)} 
+                            > Delete </button></li>           
+                                  <Modal open={isOpen} onClose={() => setIsOpen(false)} >
+                                    {/* inside here is pass as a children */}
+                                    {{id: id, addre: addre }}
+                                  </Modal>
               <li><button className="dropdown-item" onClick={() => edit(id)}>Edit</button></li>
             </ul>
           </div>
-        </div>
 
-        
-     
+       </div>
     </>
   );
 };
