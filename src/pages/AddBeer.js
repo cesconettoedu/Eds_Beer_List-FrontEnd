@@ -196,7 +196,7 @@ const Wrapper = styled.main`
   .center {
     display: flex;
     justify-content: center;
-    padding-top: 65px;
+    padding-top: 25px;
   }
 
   .formAll {

@@ -85,11 +85,11 @@ function CardBeer({addre, id, title, image, note, star, notWork}) {
             </div>
           </div>
           
-          <div className='pt-1 order-xs-1' id="3dots" >
+          <div className='pt-1 order-xs-1 dots' id="3dots" >
             <div className="" >
             <button
               type="button"
-              className="bi bi-three-dots-vertical"
+              className="bi bi-three-dots-vertical "
               disabled={notWork}
               onClick={() => setIsOpen(true)}
             ></button>

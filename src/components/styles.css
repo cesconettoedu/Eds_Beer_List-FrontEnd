@@ -37,15 +37,25 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-right: 5px;
+
 }
 
-
+.dots {
+  height: 160px;
+  
+}
+.bi:hover{
+  border-radius: 5px;
+  background-color: rgba(189, 184, 184, 0.39);
+}
 
  .bi-three-dots-vertical {
   border: none;
   background: none;
   color: var(--clr-grey-800);
-  font-size: 20px;
+  font-size: 30px;
+  cursor: context-menu;
  }
 
 
@@ -79,6 +89,10 @@
     flex-direction: column;
     justify-content: flex-end;
     
+  }
+
+  .dots {
+    height: 35px;
   }
 
 }
