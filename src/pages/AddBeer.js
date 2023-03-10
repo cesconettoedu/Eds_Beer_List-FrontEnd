@@ -100,6 +100,7 @@ const List = (event) => {
           note={note}
           star={star}
           notWork={true}
+          
         />
       </div>
 
