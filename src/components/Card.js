@@ -74,7 +74,7 @@ function CardBeer({addre, id, title, image, note, star, notWork}) {
     <>
 
         <div class="card m-1 align-items-center " key={id}  disabled={notWork}>
-          <div class="img-square order-xs-2 " onClick={() => singleBeer(id)}>
+          <div class="img-square order-xs-2" onClick={() => singleBeer(id)}>
             <img src={image} class="card-img-top img-fluid rounded pt-1 pb-1 hide-bg" alt="Descrição imagem"/>
           </div>
           <div class="p-3 card-body order-xs-3" onClick={() => singleBeer(id)}>
