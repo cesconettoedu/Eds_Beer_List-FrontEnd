@@ -27,7 +27,6 @@ function List({addre}) {
       setSearchData(getAll)
     } else {
       const filteredData = getAll.filter(app =>  app.name.toUpperCase().includes(typing.toUpperCase()))
-      console.log("aaaaaaaa", filteredData);
       setSearchData(filteredData);
     }
   }
