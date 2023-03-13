@@ -10,7 +10,7 @@ export default function Footer(props) {
       <footer className="footer fixed-bottom ">
         <Counter count={props.count} />
         <AddBtnBeer />
-        <img src={back} alt="" className='w-100 h-100'/>
+        <img src={back} alt="wave" className='w-100 h-100'/>
       </footer>
     </>
   )
