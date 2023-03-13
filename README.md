@@ -1,6 +1,6 @@
 # Ed's Beer List App
 
-This app that allows you to save, sort and remember the beers you've had. \
+This app that allows you to save and remember the beers you've had with Pictures, comments and how good it's taste. \
 For people who like to try new beers and not worry about whether they've had it before or not and remember later.
 
 
