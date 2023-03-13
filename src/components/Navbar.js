@@ -28,17 +28,6 @@ function Navbar({handleSearch}) {
             </a>
           </div>
 
-          {/* search */}
-          {/* <div className="search col-6">
-            <input
-              className="form-control mr-sm-2"
-              style={{ fontSize: "1.5em" }}
-              id="parameter"
-              type="text"
-              onChange={handleChange}
-              placeholder="Search"
-            ></input>
-          </div> */}
           <Search 
             handleSearch={handleSearch}
           />
@@ -79,7 +68,7 @@ function Navbar({handleSearch}) {
                       width={iconSize} 
                       height={iconSize} 
                       fill="currentColor" 
-                      class="bi bi-file-earmark-plus" 
+                      className="bi bi-file-earmark-plus" 
                       viewBox="0 0 16 16">
                     <path d="M8 6.5a.5.5 0 0 1 .5.5v1.5H10a.5.5 0 0 1 0 1H8.5V11a.5.5 0 0 1-1 0V9.5H6a.5.5 0 0 1 0-1h1.5V7a.5.5 0 0 1 .5-.5z"/>
                     <path d="M14 4.5V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h5.5L14 4.5zm-3 0A1.5 1.5 0 0 1 9.5 3V1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V4.5h-2z"/>
@@ -95,7 +84,7 @@ function Navbar({handleSearch}) {
                       width={iconSize} 
                       height={iconSize} 
                       fill="currentColor" 
-                      class="bi bi-camera" 
+                      className="bi bi-camera" 
                       viewBox="0 0 16 16">
                     <path d="M15 12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h1.172a3 3 0 0 0 2.12-.879l.83-.828A1 1 0 0 1 6.827 3h2.344a1 1 0 0 1 .707.293l.828.828A3 3 0 0 0 12.828 5H14a1 1 0 0 1 1 1v6zM2 4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-1.172a2 2 0 0 1-1.414-.586l-.828-.828A2 2 0 0 0 9.172 2H6.828a2 2 0 0 0-1.414.586l-.828.828A2 2 0 0 1 3.172 4H2z"/>
                     <path d="M8 11a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5zm0 1a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7zM3 6.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0z"/>

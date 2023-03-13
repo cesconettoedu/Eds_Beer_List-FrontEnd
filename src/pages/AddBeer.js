@@ -1,13 +1,9 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { useNavigate, useParams } from 'react-router-dom';
-
 import Card from "../components/Card";
 import mug from "../assets/mugs/beerIconFull.png";
-
-
 import axios from "axios";
-import SingleBeer from "./SingleBeer";
 
 function AddBeer({addre, edit }) {
   const [image, setImage] = useState("");

@@ -28,7 +28,6 @@ const OVERLAY_STYLES = {
 export default function Modal({ open, children,  edit, secondModal, onClose }) {
   
   const navigate = useNavigate();
-  const refresh = () => window.location.reload(true)  //refresh a page
 
 
   if(!open) return null
