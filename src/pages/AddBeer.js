@@ -115,7 +115,7 @@ const List = (event) => {
             className="form-control form-control-lg my-1"
             type="text"
             title="title"
-            maxLength="20"
+            maxLength="15"
             placeholder="Beer Name"
             onChange={(e) => setTitle(e.target.value)}
             value={title || ""}
