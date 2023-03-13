@@ -2,7 +2,7 @@ import React from 'react';
 import { Button } from './AddBtnStyle';
 import add from "../assets/add.png"
 import { useNavigate } from "react-router-dom";
-import styled from 'styled-components';
+
   
 const AddBtnBeer = () =>{
   const navigate = useNavigate();

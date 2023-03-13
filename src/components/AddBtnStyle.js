@@ -13,7 +13,7 @@ export const Button = styled.div`
    padding-top: 2px;
    border-radius: 4px;
    bottom: 4px;
-   color: antiquewhite;   
+   color: black;   
    display: flex;
    flex-direction: column;
    position: fixed; 
@@ -23,7 +23,7 @@ export const Button = styled.div`
    font-size: 1.5rem;
    z-index: 1;
    cursor: pointer;
-   background-color: #a9a9a9c7;
+   // background-color: #a9a9a9c7;
    display: flex;
    justify-content: center;
    align-items: center;

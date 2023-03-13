@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
-import { Navbar } from "../components";
 import { useNavigate, useParams } from 'react-router-dom';
 
 import Card from "../components/Card";

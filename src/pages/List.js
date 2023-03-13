@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
-import { Card, Navbar, AddBtnBeer } from "../components";
+import { Card, Navbar, Footer } from "../components";
 import axios from "axios";
 
 
@@ -21,9 +21,8 @@ function List({addre}) {
     }
   }
 
-  const handleSearch = (typing) => {
 
-    
+  const handleSearch = (typing) => {  
     if(typing === '') {
       setSearchData(getAll)
     } else {
@@ -44,8 +43,6 @@ function List({addre}) {
         <Navbar 
           handleSearch={handleSearch}
         />
-
-        <AddBtnBeer />
           <div className="container containerCard mb-4 " >
             <div className="row cardRow">
             {searchData.length > 0 &&
@@ -65,6 +62,9 @@ function List({addre}) {
                   })}
             </div>
           </div>
+        <Footer 
+          count={searchData.length}
+        />
       </div>
     </Wrapper>
   );
