@@ -80,9 +80,15 @@
 
 .counter {
   z-index: 0;
-  background-color: crimson;
-  font-size: 20px;
-  width: fit-content; 
+  font-size: 20px; 
+  text-align: -webkit-center;
+  color: var(--c1);
+}
+.listed {
+  width: fit-content;
+  background-color: var(--clr-complement-3);
+  padding-left: 4px;
+  padding-right: 4px;
 }
 
 @media(min-width:491px) {
