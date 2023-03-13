@@ -7,10 +7,8 @@ function Enter() {
 
   return (
     <Wrapper>
-      <div className="container responsive" 
-      //  style={myStyle}
-      >
-        <div className="col text-center ">
+      <div className="container responsive">
+        <div className="col text-center">
           
           <h1 className="pt-3 eds"> Ed's Beer List</h1>
           
