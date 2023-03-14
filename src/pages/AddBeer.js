@@ -71,7 +71,12 @@ function AddBeer({addre, edit }) {
 //just to return to list
 const List = (event) => {
  navigate(`/list`);  
-  }
+}
+
+//just to go to future
+const Future = (event) => {
+ navigate(`/future`);  
+}
 
 
 
@@ -132,6 +137,11 @@ const List = (event) => {
             value={image || ""}
            
           />
+          <button 
+            type="button"
+            className="btn"
+            onClick={() => Future()}
+          >Take picture</button>
           </div>   
 
           <div className="mb-3">

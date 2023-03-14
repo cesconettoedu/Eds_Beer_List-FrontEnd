@@ -57,15 +57,6 @@ function App() {
   }, [videoRef]); 
 
 
-
-
-// just to return
- const backToList = (event) => {
-    navigate(`/list`);  
-    event.stopPropagation();
-  }
-
-
   return (
     <div class="container lens">
 
@@ -82,7 +73,7 @@ function App() {
 
     
 
-<button type="button" className="btn btn-primary" onClick={(event) => backToList(event)}>Return</button>
+<button type="button" className="btn btn-primary" onClick={() => navigate(-1)}>Return</button>
 
     </div>
 
