@@ -18,20 +18,19 @@ https://user-images.githubusercontent.com/99515575/225020740-0c4516cc-d504-4ed4-
 
 
 
+Version 1.0 \
+Next version, the camera function will be added, to take a photo of the beer and put it as an image
+
+
 
 ## Technologies used:
 Front-end: React, Bootstrap \
 Back-end: Node, Express, MySql \
 DataBase it's a web based service (so is saved in the cloud) 
 
-In the project directory, you can run:
 
-### `npm install`
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 
 
