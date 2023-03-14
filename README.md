@@ -4,7 +4,11 @@ This app that allows you to save and remember the beers you've had with Pictures
 For people who like to try new beers and not worry about whether they've had it before or not and remember later.
 
 
-https://user-images.githubusercontent.com/99515575/224892472-b18996c2-e859-408c-8354-a707bc1a2b35.mp4
+
+
+https://user-images.githubusercontent.com/99515575/224896909-6f12e668-085e-4e01-8729-3c6b1bc82b06.mp4
+
+
 
 
 
