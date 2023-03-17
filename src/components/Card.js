@@ -13,8 +13,10 @@ import mug4 from "../assets/mugs/04mugs.png"
 import mug5 from "../assets/mugs/05mugs.png"
 
 
-function CardBeer({addre, id, title, image, imageB, note, star, notWork}) {
+function CardBeer({addre, id, title, image, note, star, notWork}) {
   
+  console.log("PPP", image);
+
   const [stars, setStars] = useState();
   const navigate = useNavigate();
   const [isOpen, setIsOpen] = useState(false);

@@ -92,7 +92,7 @@ margin-bottom: 88px;
   padding-right: 4px;
 }
 
-
+/* AddBeer -- btns take and upload pic */
 .btn-circle {
   width: 99px;
   height: 86px;
@@ -101,9 +101,20 @@ margin-bottom: 88px;
   border-radius: 77px;
   font-size: 60px;
 }
-
 .or {
   font-size: 40px;
+}
+.wrapper{
+  display: inline-block;
+    position: relative
+}
+.uploadImg{
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
 }
 /* CAM */
 .btnBtns {

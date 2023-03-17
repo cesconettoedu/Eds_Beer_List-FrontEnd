@@ -80,6 +80,14 @@ const List = (event) => {
 }
 
 
+const onImageChange = (event) => {
+ if (event.target.files && event.target.files[0]) {
+   setImage(URL.createObjectURL(event.target.files[0]));
+   console.log("III", URL.createObjectURL(event.target.files[0]));
+ }
+}
+
+
 
  useEffect(() => {
   if(edit){
@@ -106,9 +114,6 @@ const List = (event) => {
             />
         </div>
       
-
-    
-    
 
         <div className="container d-flex justify-content-center  mt-4">
           <form onSubmit={handleSubmit}>
@@ -137,9 +142,7 @@ const List = (event) => {
                 <div className="col-5">
                   {/* <input
                   className="form-control form-control-lg my-1"
-                  type="text"
                   name="image"
-                  placeholder="Picture address"
                   onChange={(e) => setImage(e.target.value)}         
                 /> */}
                 <button 
@@ -153,14 +156,19 @@ const List = (event) => {
                 <h2 className="form-label or">OR</h2>
               </div>
 
-
-
-              <div className="col-5">
-                <button 
-                  type="button"
-                  className="btn  btn-circle bi bi-file-earmark-arrow-up-fill "
-                  onClick={() => setOpenCam(true)}
-                ></button>
+              <div className="col-5 wrapper">
+                <div className="btn btn-circle bi bi-file-earmark-arrow-up-fill"
+                    
+                >
+                  <input 
+                    id="upPic" 
+                    name="image"
+                    className="uploadImg" 
+                    type="file"
+                    accept="image/*"
+                    onChange={onImageChange} 
+                  ></input>
+                </div>
               </div>
 
             </div>
@@ -181,8 +189,6 @@ const List = (event) => {
               value={note || ""}
             />
             </div> 
-
-
 
             <div className="mb-3">
               <label htmlFor="taste" className="form-label">
