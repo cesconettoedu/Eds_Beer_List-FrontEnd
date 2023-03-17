@@ -20,8 +20,6 @@ function CardBeer({addre, id, title, image, imageB, note, star, notWork}) {
   const [isOpen, setIsOpen] = useState(false);
   const [isOpen2, setIsOpen2] = useState(false);
 
-  console.log("IMAGEEEE", image.length);
-
   const StarClick = (x) => {
 
     if(star == 0) {
@@ -76,12 +74,7 @@ function CardBeer({addre, id, title, image, imageB, note, star, notWork}) {
 
         <div className="card m-1 align-items-center " key={id}  disabled={notWork}>
           <div className="img-square order-xs-2 d-flex justify-content-center"  onClick={() => singleBeer(id)}>
-            {image &&
-              <img src={image} className="beerimg card-img-top img-fluid rounded p-1 hide-bg" alt="image not found"/>
-            }
-            {!image &&
-              <img src={`'data:image/jpeg;base64,'${imageB}`} className="beerimg card-img-top img-fluid rounded p-1 hide-bg" alt="image not found"/>
-            }
+            <img src={image} className="beerimg card-img-top img-fluid rounded p-1 hide-bg" alt="image not found"/>                     
           </div>
           <div className=" card-body order-xs-3" onClick={() => singleBeer(id)}>
             <h3 className="card-title ">{title}</h3>
