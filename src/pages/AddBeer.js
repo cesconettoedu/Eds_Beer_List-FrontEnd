@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { useNavigate, useParams } from 'react-router-dom';
-import Card from "../components/Card";
+import { Card, Cam } from "../components";
 import mug from "../assets/mugs/beerIconFull.png";
 import axios from "axios";
 
@@ -11,7 +11,7 @@ function AddBeer({addre, edit }) {
   const [note, setNote] = useState("No comments yet");
   const [star, setStar] = useState(0);
   
-  const [scrShot, setScrShot] = useState("");
+  const [openCam, setOpenCam] = useState(false);
  
   const navigate = useNavigate();
   const refresh = () => window.location.reload(true)  //refresh a page
@@ -19,7 +19,15 @@ function AddBeer({addre, edit }) {
 
 
 
-// add beer
+// callback func to bring the file from children (cam)
+  const newFoto = (picture) => {
+    setImage(picture)
+    setOpenCam(false)
+
+
+  }
+
+  // add beer
   const handleSubmit = async (e) => {
     e.preventDefault()
     const body = {
@@ -54,9 +62,7 @@ function AddBeer({addre, edit }) {
   }
 }
 
-
-
-  //load a single beer to edit
+ //load a single beer to edit
   async function single() {
     try {
       const res = await axios.get(addre + `/${id}`);
@@ -75,15 +81,9 @@ const List = (event) => {
  navigate(`/list`);  
 }
 
-//just to go to future
-const Future = (event) => {
- navigate(`/future`);  
-}
-
 
 
  useEffect(() => {
-  
   if(edit){
     single();
   }
@@ -93,108 +93,121 @@ const Future = (event) => {
 
   return (
     <Wrapper>
-
-      <div className="center">
-      
-        <Card 
-          image={image} 
-          title={title} 
-          note={note}
-          star={star}
-          notWork={true}
-          
-        />
-      </div>
-
-      <br />
-
-      <div className="container d-flex justify-content-center">
-        <form onSubmit={handleSubmit}>
-          <div className="mb-3">
-            <label htmlFor="beerName" className="form-label">
-              Beer Name
-            </label>
-            <input
-            className="form-control form-control-lg my-1"
-            type="text"
-            title="title"
-            maxLength="15"
-            placeholder="Beer Name"
-            onChange={(e) => setTitle(e.target.value)}
-            value={title || ""}
-            required
-          />
-          </div>
-
-          <div className="mb-3">
-            <label htmlFor="pictureAddress" className="form-label">
-              Picture Address
-            </label>
-            <input
-            className="form-control form-control-lg my-1"
-            type="text"
-            name="image"
-            placeholder="Picture address"
-            onChange={(e) => setImage(e.target.value)}
-            value={image || ""}
-           
-          />
-          <button 
-            type="button"
-            className="btn"
-            onClick={() => Future()}
-          >Take picture</button>
-          </div>   
-
-          <div className="mb-3">
-            <label htmlFor="note" className="form-label">
-              Note
-            </label>
-            <input
-            className="form-control form-control-lg my-1"
-            type="text"
-            note="note"
-            maxLength="50"
-            placeholder="Note"
-            onClick={() => setNote('')}
-            onChange={(e) => setNote(e.target.value)}
-            value={note || ""}
-          />
-          </div> 
-
-
-
-          <div className="mb-3">
-            <label htmlFor="taste" className="form-label">
-             Score
-            </label>
-            <div className="text-center">
-              <img src={mug} className="mug" alt="glass" onClick={() => setStar(1)}/>
-              <img src={mug} className="mug" alt="glass" onClick={() => setStar(2)}/>
-              <img src={mug} className="mug" alt="glass" onClick={() => setStar(3)}/>
-              <img src={mug} className="mug" alt="glass" onClick={() => setStar(4)}/>
-              <img src={mug} className="mug" alt="glass" onClick={() => setStar(5)}/>
-            </div>
-          </div>  
- 
-
-        {edit &&
-        <div className="d-flex justify-content-around">
-          <button className=' btn include' type="submit">Confirm</button>
-          <button className=' btn include' type="button" onClick={() => List()} >Cancel</button>
-        </div>
-        }
-        {!edit &&
-        <div className="d-flex justify-content-around">
-          <button className=' btn include' type="submit">Add Beer</button>
-          <button className=' btn include' type="button" onClick={() => List()} >Cancel</button>
-        </div>
-        }
-
-
-        </form>
+      {!openCam &&  
+      <>
+     
+        <div className="center">
         
-      </div>
+          <Card 
+            image={image} 
+            title={title} 
+            note={note}
+            star={star}
+            notWork={true}
+            
+            />
+        </div>
+      
+
+    
+    
+
+        <div className="container d-flex justify-content-center mt-4">
+          <form onSubmit={handleSubmit}>
+            <div className="mb-3">
+              <label htmlFor="beerName" className="form-label">
+                Beer Name
+              </label>
+              <input
+              className="form-control form-control-lg my-1"
+              type="text"
+              title="title"
+              maxLength="15"
+              placeholder="Beer Name"
+              onChange={(e) => setTitle(e.target.value)}
+              value={title || ""}
+              required
+            />
+            </div>
+
+            <div className="mb-3">
+              <label htmlFor="pictureAddress" className="form-label">
+                Picture Address
+              </label>
+              <input
+              className="form-control form-control-lg my-1"
+              type="text"
+              name="image"
+              placeholder="Picture address"
+              onChange={(e) => setImage(e.target.value)}
+              value={image || ""}
+            
+            />
+            <button 
+              type="button"
+              className="btn"
+              onClick={() => setOpenCam(true)}
+            >Take picture</button>
+            </div>   
+
+            <div className="mb-3">
+              <label htmlFor="note" className="form-label">
+                Note
+              </label>
+              <input
+              className="form-control form-control-lg my-1"
+              type="text"
+              note="note"
+              maxLength="50"
+              placeholder="Note"
+              onClick={() => setNote('')}
+              onChange={(e) => setNote(e.target.value)}
+              value={note || ""}
+            />
+            </div> 
+
+
+
+            <div className="mb-3">
+              <label htmlFor="taste" className="form-label">
+              Score
+              </label>
+              <div className="text-center">
+                <img src={mug} className="mug" alt="glass" onClick={() => setStar(1)}/>
+                <img src={mug} className="mug" alt="glass" onClick={() => setStar(2)}/>
+                <img src={mug} className="mug" alt="glass" onClick={() => setStar(3)}/>
+                <img src={mug} className="mug" alt="glass" onClick={() => setStar(4)}/>
+                <img src={mug} className="mug" alt="glass" onClick={() => setStar(5)}/>
+              </div>
+            </div>  
+  
+
+          {edit &&
+          <div className="d-flex justify-content-around">
+            <button className=' btn include' type="submit">Confirm</button>
+            <button className=' btn include' type="button" onClick={() => List()} >Cancel</button>
+          </div>
+          }
+          {!edit &&
+          <div className="d-flex justify-content-around">
+            <button className=' btn include' type="submit">Add Beer</button>
+            <button className=' btn include' type="button" onClick={() => List()} >Cancel</button>
+          </div>
+          }
+
+
+          </form>
+          
+        </div>
+      </>
+    }
+    {openCam &&
+      <Cam> 
+        {{newFoto: newFoto}}
+      </Cam> 
+    }
+
+
     </Wrapper>
   );
 }

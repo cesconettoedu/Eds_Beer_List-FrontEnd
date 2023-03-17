@@ -12,7 +12,7 @@ const videoConstraints = {
 
 
 
-const Cam = () => {
+const Cam = (newFoto) => {
   const navigate = useNavigate();
   const [picture, setPicture] = useState('')
   const webcamRef = React.useRef(null)
@@ -23,13 +23,13 @@ const Cam = () => {
     setPicture(pictureSrc)
   })
 
-  console.log("aaaaaaaaa", picture);
+  console.log("aaaaaaaaa", newFoto.children.newFoto);
 
 
   return (
-    <div className='container'>
-      <h2 className="mb-5 text-center">
-        React Photo Capture using Webcam Examle
+    <div className='container text-light mt-4'>
+      <h2 className="mb-5 text-center ">
+        Beer Photo Capture 
       </h2>
       <div>
         {picture == '' ? (
@@ -57,7 +57,8 @@ const Cam = () => {
             >
               Retake
             </button>
-            <button type="button" className="btn btn-primary" onClick={() => navigate(-1)}>Save</button>
+            <div>OR</div>
+            <button type="button" className="btn btn-primary" onClick={() => newFoto.children.newFoto(picture)}>Save</button>
 
           </div>
           </>
