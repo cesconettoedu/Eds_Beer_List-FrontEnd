@@ -23,15 +23,12 @@ const Cam = (newFoto) => {
     setPicture(pictureSrc)
   })
 
-  console.log("aaaaaaaaa", picture);
-
-
   return (
     <div className='container text-light mt-4'>
       <h2 className="mb-5 text-center ">
         Beer Photo Capture 
       </h2>
-      <div>
+      <div className='showLive'>
         {picture == '' ? (
           <Webcam
             audio={false}

@@ -110,7 +110,7 @@ const List = (event) => {
     
     
 
-        <div className="container d-flex justify-content-center mt-4">
+        <div className="container d-flex justify-content-center  mt-4">
           <form onSubmit={handleSubmit}>
             <div className="mb-3">
               <label htmlFor="beerName" className="form-label">
@@ -129,24 +129,37 @@ const List = (event) => {
             </div>
 
             <div className="mb-3">
-              <label htmlFor="pictureAddress" className="form-label">
-                Picture Address
-              </label>
-              <input
-              className="form-control form-control-lg my-1"
-              type="text"
-              name="image"
-              placeholder="Picture address"
-              onChange={(e) => setImage(e.target.value)}
-             
-            
-            />
-            <button 
-              type="button"
-              className="btn"
-              onClick={() => setOpenCam(true)}
-            >Take picture</button>
-            </div>   
+              <div class="row text-center align-items-center">
+                  <label htmlFor="pictureAddress" className="form-label  ">
+                    Beer Image
+                  </label>
+                <div class="col-5">
+                  {/* <input
+                  className="form-control form-control-lg my-1"
+                  type="text"
+                  name="image"
+                  placeholder="Picture address"
+                  onChange={(e) => setImage(e.target.value)}         
+                /> */}
+                <button 
+                  type="button"
+                  className="btn btn-circle"
+                  onClick={() => setOpenCam(true)}
+                ><i class="bi bi-camera-fill">&ensp;</i>Take Photo</button>
+              </div>
+              <div class="col-2">
+                <h2 className="form-label or">OR</h2>
+              </div>
+              <div class="col-5">
+                <button 
+                  type="button"
+                  className="btn btn-circle"
+                  onClick={() => setOpenCam(true)}
+                ><i class="bi bi-camera-fill">&ensp;</i>Take Photo</button>
+              </div>    
+
+            </div>
+          </div>   
 
             <div className="mb-3">
               <label htmlFor="note" className="form-label">
