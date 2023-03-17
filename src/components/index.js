@@ -1,10 +1,11 @@
 import Card from "./Card"
 import Navbar from "./Navbar";
 import AddBtnBeer from "./AddBtnBeer"
-import Future from "./Future"
+import Future from "./Future_changeFor_Cam"
 import Search from "./Search";
 import Footer from "./Footer";
 import Counter from "./Counter";
+import Cam from "./Cam";
 
 export {
   Card,
@@ -13,5 +14,6 @@ export {
   Future,
   Search,
   Footer, 
-  Counter
+  Counter,
+  Cam
 }

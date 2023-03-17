@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Enter, List, AddBeer, SingleBeer } from './pages';
-import { Future } from './components';
+import { Cam } from './components';
+
 
 function App() {
 
@@ -14,7 +15,7 @@ function App() {
         <Route path='/add' element={<AddBeer addre={addre} edit={false}/>} />
         <Route path='/edit/:id' element={<AddBeer addre={addre} edit={true}/>} />
         <Route path='/:id' element={<SingleBeer addre={addre}/>} />
-        <Route path='/future' element={<Future />} />
+        <Route path='/future' element={<Cam />} />
       </Routes>
     </Router>
   );

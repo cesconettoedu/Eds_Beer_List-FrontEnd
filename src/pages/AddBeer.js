@@ -10,6 +10,8 @@ function AddBeer({addre, edit }) {
   const [title, setTitle] = useState("");
   const [note, setNote] = useState("No comments yet");
   const [star, setStar] = useState(0);
+  
+  const [scrShot, setScrShot] = useState("");
  
   const navigate = useNavigate();
   const refresh = () => window.location.reload(true)  //refresh a page
