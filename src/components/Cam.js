@@ -23,7 +23,7 @@ const Cam = (newFoto) => {
     setPicture(pictureSrc)
   })
 
-  console.log("aaaaaaaaa", newFoto.children.newFoto);
+  console.log("aaaaaaaaa", picture);
 
 
   return (
@@ -39,6 +39,7 @@ const Cam = (newFoto) => {
             ref={webcamRef}
             width={400}
             screenshotFormat="image/jpeg"
+            screenshotQuality={0.5}
             videoConstraints={videoConstraints}
           />
         ) : (

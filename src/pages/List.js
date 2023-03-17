@@ -52,6 +52,7 @@ function List({addre}) {
                       id={breja.id}
                       title={breja.name}
                       image={breja.image}
+                      imageB={breja.imageB}
                       note={breja.note}
                       star={breja.star}
                       addre={addre}

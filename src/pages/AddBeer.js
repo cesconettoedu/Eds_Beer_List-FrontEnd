@@ -22,6 +22,8 @@ function AddBeer({addre, edit }) {
 // callback func to bring the file from children (cam)
   const newFoto = (picture) => {
     setImage(picture)
+
+    console.log("IMAGEEEE", image.length);
     setOpenCam(false)
 
 
@@ -140,7 +142,7 @@ const List = (event) => {
               name="image"
               placeholder="Picture address"
               onChange={(e) => setImage(e.target.value)}
-              value={image || ""}
+             
             
             />
             <button 

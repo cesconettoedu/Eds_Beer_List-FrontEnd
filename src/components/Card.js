@@ -13,13 +13,14 @@ import mug4 from "../assets/mugs/04mugs.png"
 import mug5 from "../assets/mugs/05mugs.png"
 
 
-function CardBeer({addre, id, title, image, note, star, notWork}) {
+function CardBeer({addre, id, title, image, imageB, note, star, notWork}) {
   
   const [stars, setStars] = useState();
   const navigate = useNavigate();
   const [isOpen, setIsOpen] = useState(false);
   const [isOpen2, setIsOpen2] = useState(false);
 
+  console.log("IMAGEEEE", image.length);
 
   const StarClick = (x) => {
 
@@ -75,7 +76,12 @@ function CardBeer({addre, id, title, image, note, star, notWork}) {
 
         <div className="card m-1 align-items-center " key={id}  disabled={notWork}>
           <div className="img-square order-xs-2 d-flex justify-content-center"  onClick={() => singleBeer(id)}>
-            <img src={image} className="beerimg card-img-top img-fluid rounded p-1 hide-bg" alt="image not found"/>
+            {image &&
+              <img src={image} className="beerimg card-img-top img-fluid rounded p-1 hide-bg" alt="image not found"/>
+            }
+            {!image &&
+              <img src={`'data:image/jpeg;base64,'${imageB}`} className="beerimg card-img-top img-fluid rounded p-1 hide-bg" alt="image not found"/>
+            }
           </div>
           <div className=" card-body order-xs-3" onClick={() => singleBeer(id)}>
             <h3 className="card-title ">{title}</h3>
