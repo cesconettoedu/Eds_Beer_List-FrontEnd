@@ -129,11 +129,12 @@ const List = (event) => {
             </div>
 
             <div className="mb-3">
-              <div class="row text-center align-items-center">
+              <div className="row text-center align-items-center">
                   <label htmlFor="pictureAddress" className="form-label  ">
                     Beer Image
                   </label>
-                <div class="col-5">
+
+                <div className="col-5">
                   {/* <input
                   className="form-control form-control-lg my-1"
                   type="text"
@@ -143,20 +144,24 @@ const List = (event) => {
                 /> */}
                 <button 
                   type="button"
-                  className="btn btn-circle"
+                  className="btn btn-circle bi bi-camera-fill"
                   onClick={() => setOpenCam(true)}
-                ><i class="bi bi-camera-fill">&ensp;</i>Take Photo</button>
+                ></button>
               </div>
-              <div class="col-2">
+
+              <div className="col-2">
                 <h2 className="form-label or">OR</h2>
               </div>
-              <div class="col-5">
+
+
+
+              <div className="col-5">
                 <button 
                   type="button"
-                  className="btn btn-circle"
+                  className="btn  btn-circle bi bi-file-earmark-arrow-up-fill "
                   onClick={() => setOpenCam(true)}
-                ><i class="bi bi-camera-fill">&ensp;</i>Take Photo</button>
-              </div>    
+                ></button>
+              </div>
 
             </div>
           </div>   

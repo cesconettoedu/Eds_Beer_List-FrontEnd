@@ -96,15 +96,10 @@ margin-bottom: 88px;
 .btn-circle {
   width: 99px;
   height: 86px;
-  padding: 10px 16px;
   font-size: 20px;
   line-height: 1.33;
   border-radius: 77px;
-}
-
-.bi-camera-fill{
-  width: 20px;
-  height: 20px;
+  font-size: 60px;
 }
 
 .or {
