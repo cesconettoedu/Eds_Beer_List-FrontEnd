@@ -124,7 +124,7 @@ video, .borderFoto {
 }
 /* CAM *****************************/
 .btnBtns {
-  background-color: #ff9500;
+  /* background-color: #ff9500; */
   display: flex;
   justify-content: space-evenly;
 }

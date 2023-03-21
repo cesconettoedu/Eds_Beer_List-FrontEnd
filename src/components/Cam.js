@@ -58,7 +58,9 @@ const Cam = (newFoto) => {
               Retake
             </button>
             <div>OR</div>
-            <button type="button" className="btn btn-primary circle" onClick={() => newFoto.children.newFoto(picture)}>Save</button>
+            <button type="button" className="btn btn-primary circle" 
+            onClick={() => newFoto.children.newFoto(picture)}>Save
+            </button>
 
           </div>
           </>
@@ -73,7 +75,9 @@ const Cam = (newFoto) => {
             Capture
           </button>
         )}
-      <button type="button" className="btn btn-primary circle " onClick={() => navigate(-1)}>Cancel</button>
+      <button type="button" className="btn btn-primary circle " 
+      onClick={() => navigate(-1)}>Cancel
+      </button>
       </div>
 
     </div>
