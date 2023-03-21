@@ -5,8 +5,8 @@ import Webcam from 'react-webcam'
 
 const WebcamComponent = () => <Webcam />
 const videoConstraints = {
-  width: 1902,
-  height: 1080,
+  width: 1060,
+  height: 1440,
   facingMode: 'user',
 }
 
@@ -28,7 +28,7 @@ const Cam = (newFoto) => {
       <h2 className="mb-5 text-center ">
         Beer Photo Capture 
       </h2>
-      <div className='showLive'>
+      <div className='showLive '>
         {picture == '' ? (
           <Webcam
             audio={false}
@@ -36,13 +36,15 @@ const Cam = (newFoto) => {
             ref={webcamRef}
             width={400}
             screenshotFormat="image/jpeg"
-            screenshotQuality={0.5}
+            screenshotQuality={0.7}
             videoConstraints={videoConstraints}
           />
         ) : (
-          <img src={picture} />
+          <img src={picture} className= "borderFoto"/>
         )}
       </div>
+
+
       <div className='btnBtns'>
         {picture != '' ? (
           <>
@@ -51,12 +53,12 @@ const Cam = (newFoto) => {
               onClick={() => {
                 refresh()
               }}
-              className="btn btn-primary "
+              className="btn btn-primary  circle"
             >
               Retake
             </button>
             <div>OR</div>
-            <button type="button" className="btn btn-primary" onClick={() => newFoto.children.newFoto(picture)}>Save</button>
+            <button type="button" className="btn btn-primary circle" onClick={() => newFoto.children.newFoto(picture)}>Save</button>
 
           </div>
           </>
@@ -66,12 +68,12 @@ const Cam = (newFoto) => {
               e.preventDefault()
               capture()
             }}
-            className="btn btn-primary"
+            className="btn btn-primary circle "
           >
             Capture
           </button>
         )}
-      <button type="button" className="btn btn-primary" onClick={() => navigate(-1)}>Cancel</button>
+      <button type="button" className="btn btn-primary circle " onClick={() => navigate(-1)}>Cancel</button>
       </div>
 
     </div>

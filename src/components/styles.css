@@ -93,13 +93,19 @@ margin-bottom: 88px;
 }
 
 /* AddBeer -- btns take and upload pic */
-.btn-circle {
+.btn-circle, .circle {
   width: 99px;
   height: 86px;
-  font-size: 20px;
   line-height: 1.33;
   border-radius: 77px;
   font-size: 60px;
+}
+.circle {
+  font-size: 20px;
+}
+
+video, .borderFoto {
+  border: groove;
 }
 .or {
   font-size: 40px;
@@ -116,7 +122,7 @@ margin-bottom: 88px;
   right: 0;
   bottom: 0;
 }
-/* CAM */
+/* CAM *****************************/
 .btnBtns {
   background-color: #ff9500;
   display: flex;
@@ -128,8 +134,8 @@ margin-bottom: 88px;
 }
 
 .showLive{
-      display: flex;
-        justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 @media(max-width:366px) {

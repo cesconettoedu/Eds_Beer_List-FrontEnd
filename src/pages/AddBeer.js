@@ -81,7 +81,7 @@ const List = (event) => {
 
 
 
-// use to get the image and lower the image 
+// use to get the image and lower the image React Resizer
 const resizeFile = (file) =>
   new Promise((resolve) => {
     Resizer.imageFileResizer(
@@ -89,7 +89,7 @@ const resizeFile = (file) =>
       200,
       200,
       "JPEG",
-      50,
+      100,
       0,
       (uri) => {
         resolve(uri);
@@ -100,17 +100,13 @@ const resizeFile = (file) =>
 
 const onImageChange = async (event) => {
   try {
-    const file = event.target.files[0];
+    const file = event.target.files[0]; //path to image input
     const image = await resizeFile(file);
     setImage(image)
   } catch (err) {
     console.log(err);
   }
 };
-
-
-
-
 
 useEffect(() => {
   if(edit){
@@ -163,11 +159,7 @@ useEffect(() => {
                   </label>
 
                 <div className="col-5">
-                  {/* <input
-                  className="form-control form-control-lg my-1"
-                  name="image"
-                  onChange={(e) => setImage(e.target.value)}         
-                /> */}
+             
                 <button 
                   type="button"
                   className="btn btn-circle bi bi-camera-fill"
