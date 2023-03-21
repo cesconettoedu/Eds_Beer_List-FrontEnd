@@ -4,6 +4,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { Card, Cam } from "../components";
 import mug from "../assets/mugs/beerIconFull.png";
 import axios from "axios";
+import Resizer from "react-image-file-resizer";
 
 function AddBeer({addre, edit }) {
   const [image, setImage] = useState("");
@@ -73,27 +74,49 @@ function AddBeer({addre, edit }) {
     }
   }
 
-
 //just to return to list
 const List = (event) => {
  navigate(`/list`);  
 }
 
 
-const onImageChange = (event) => {
- if (event.target.files && event.target.files[0]) {
-   setImage(URL.createObjectURL(event.target.files[0]));
-   console.log("III", URL.createObjectURL(event.target.files[0]));
- }
-}
+
+// use to get the image and lower the image 
+const resizeFile = (file) =>
+  new Promise((resolve) => {
+    Resizer.imageFileResizer(
+      file,
+      200,
+      200,
+      "JPEG",
+      50,
+      0,
+      (uri) => {
+        resolve(uri);
+      },
+      "base64"
+    );
+  });
+
+const onImageChange = async (event) => {
+  try {
+    const file = event.target.files[0];
+    const image = await resizeFile(file);
+    setImage(image)
+  } catch (err) {
+    console.log(err);
+  }
+};
 
 
 
- useEffect(() => {
+
+
+useEffect(() => {
   if(edit){
     single();
   }
-  }, []);
+}, []);
 
 
 
@@ -157,8 +180,7 @@ const onImageChange = (event) => {
               </div>
 
               <div className="col-5 wrapper">
-                <div className="btn btn-circle bi bi-file-earmark-arrow-up-fill"
-                    
+                <div className="btn btn-circle bi bi-file-earmark-arrow-up-fill" 
                 >
                   <input 
                     id="upPic" 

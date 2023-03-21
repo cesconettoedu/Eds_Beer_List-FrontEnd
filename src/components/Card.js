@@ -15,7 +15,7 @@ import mug5 from "../assets/mugs/05mugs.png"
 
 function CardBeer({addre, id, title, image, note, star, notWork}) {
   
-  console.log("PPP", image);
+  // console.log("PPP", image);
 
   const [stars, setStars] = useState();
   const navigate = useNavigate();
@@ -76,7 +76,7 @@ function CardBeer({addre, id, title, image, note, star, notWork}) {
 
         <div className="card m-1 align-items-center " key={id}  disabled={notWork}>
           <div className="img-square order-xs-2 d-flex justify-content-center"  onClick={() => singleBeer(id)}>
-            <img src={image} className="beerimg card-img-top img-fluid rounded p-1 hide-bg" alt="image not found"/>                     
+            <img src={image} className="beerimg card-img-top img-fluid rounded p-1 hide-bg" alt="image not found" id="edu"/>                     
           </div>
           <div className=" card-body order-xs-3" onClick={() => singleBeer(id)}>
             <h3 className="card-title ">{title}</h3>
