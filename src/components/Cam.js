@@ -1,35 +1,30 @@
-import React, { useState } from 'react'
-import { useNavigate } from 'react-router-dom';
-import Webcam from 'react-webcam'
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import Webcam from "react-webcam";
 
-
-const WebcamComponent = () => <Webcam />
+const WebcamComponent = () => <Webcam />;
 const videoConstraints = {
   width: 1060,
   height: 1440,
-  facingMode: 'user',
-}
-
-
+  facingMode: "user",
+};
 
 const Cam = (newFoto) => {
   const navigate = useNavigate();
-  const [picture, setPicture] = useState('')
-  const webcamRef = React.useRef(null)
-  const refresh = () => window.location.reload(true)
+  const [picture, setPicture] = useState("");
+  const webcamRef = React.useRef(null);
+  const refresh = () => window.location.reload(true);
 
   const capture = React.useCallback(() => {
-    const pictureSrc = webcamRef.current.getScreenshot()
-    setPicture(pictureSrc)
-  })
+    const pictureSrc = webcamRef.current.getScreenshot();
+    setPicture(pictureSrc);
+  });
 
   return (
-    <div className='container text-light mt-4'>
-      <h2 className="mb-5 text-center ">
-        Beer Photo Capture 
-      </h2>
-      <div className='showLive '>
-        {picture == '' ? (
+    <div className="container text-light mt-4">
+      <h2 className="mb-5 text-center ">Beer Photo Capture</h2>
+      <div className="showLive ">
+        {picture == "" ? (
           <Webcam
             audio={false}
             height={400}
@@ -40,47 +35,69 @@ const Cam = (newFoto) => {
             videoConstraints={videoConstraints}
           />
         ) : (
-          <img src={picture} className= "borderFoto"/>
+          <img src={picture} className="borderFoto" />
         )}
       </div>
 
+      <div className="container d-flex justify-content-center btnBtns ">
+        {picture != "" ? (
+          
+            <div className="btnCapt ">
+              <button
+                type="button"
+                className="btn3d btn btn-success btn-lg"
+                onClick={() => newFoto.children.newFoto(picture)}
+              ><i class="bi bi-file-earmark-arrow-down"></i> 
+                Save
+              </button>
+              <button
+                onClick={() => {
+                  refresh();
+                }}
+                className="btn3d btn btn-warning btn-lg"
+              ><i class="bi bi-camera"></i>
+                Retake
+              </button>
 
-      <div className='btnBtns'>
-        {picture != '' ? (
-          <>
-          <div className='btnCapt'>
-            <button
-              onClick={() => {
-                refresh()
-              }}
-              className="btn btn-primary  circle"
+              <button
+              type="button"
+              className="btn3d btn btn-danger btn-lg"
+              onClick={() => navigate(-1)}
             >
-              Retake
+              <i class="bi  bi-x-square"></i>
+              Cancel
             </button>
-            <div>OR</div>
-            <button type="button" className="btn btn-primary circle" 
-            onClick={() => newFoto.children.newFoto(picture)}>Save
-            </button>
-
-          </div>
-          </>
+            </div>
+          
         ) : (
-          <button
-            onClick={(e) => {
-              e.preventDefault()
-              capture()
-            }}
-            className="btn btn-primary circle "
-          >
-            Capture
-          </button>
-        )}
-      <button type="button" className="btn btn-primary circle " 
-      onClick={() => navigate(-1)}>Cancel
-      </button>
-      </div>
+          <div className="">
+            <button
+              type="button"
+              onClick={(e) => {
+                e.preventDefault();
+                capture();
+              }}
+              className="btn3d btn btn-success btn-lg "
+            >
+              <i class="bi bi-fullscreen"></i>
+                Snap
+            </button>
 
+            <button
+              type="button"
+              className="btn3d btn btn-danger btn-lg"
+              onClick={() => navigate(-1)}
+            >
+              <i class="bi  bi-x-square"></i>
+              Cancel
+            </button>
+          </div>
+        )}
+      </div>
     </div>
-  )
-}
-export default Cam
+  );
+};
+export default Cam;
+
+// https://codepen.io/bepctak/pen/ojXjzR
+// 	<button type="button" class="btn btn-danger btn-lg btn3d"><span class="glyphicon glyphicon-off"></span></button>

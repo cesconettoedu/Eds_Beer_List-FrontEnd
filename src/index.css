@@ -314,7 +314,7 @@ ul {
 
 /* buttons */
 
-.btn {
+ .btn {
   cursor: pointer;
   font-family: 'Delight Coffee', sans-serif;
   color: var(--clr-complement-1);
@@ -362,7 +362,7 @@ ul {
 .btn-danger:hover {
   background: var(--red-dark);
   color: var(--clr-white);
-}
+} 
 
 .title {
   text-align: center;
