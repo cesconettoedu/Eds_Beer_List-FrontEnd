@@ -39,59 +39,39 @@ const Cam = (newFoto) => {
         )}
       </div>
 
-      <div className="container d-flex justify-content-center btnBtns ">
+      <div className="container d-flex justify-content-center btnBtns">
         {picture != "" ? (
           
             <div className="btnCapt ">
-              <button
-                type="button"
-                className="btn3d btn btn-success btn-lg"
-                onClick={() => newFoto.children.newFoto(picture)}
-              ><i class="bi bi-file-earmark-arrow-down"></i> 
-                Save
+              
+              <button type="button" className="btn3d btn btn-success btn-lg" onClick={() => newFoto.children.newFoto(picture)} >
+                <i class="bi bi-file-earmark-arrow-down"></i> Save
               </button>
-              <button
-                onClick={() => {
-                  refresh();
-                }}
-                className="btn3d btn btn-warning btn-lg"
-              ><i class="bi bi-camera"></i>
-                Retake
+              
+              <button type="button" className="btn3d btn btn-warning btn-lg" onClick={() => {refresh();}} >
+                <i class="bi bi-camera"></i> Retake
               </button>
 
-              <button
-              type="button"
-              className="btn3d btn btn-danger btn-lg"
-              onClick={() => navigate(-1)}
-            >
-              <i class="bi  bi-x-square"></i>
-              Cancel
-            </button>
+              <button type="button" className="btn3d btn btn-danger btn-lg" onClick={() => navigate(-1)} >
+                <i class="bi  bi-x-square"></i> Cancel
+              </button>
+
             </div>
           
         ) : (
+
           <div className="">
-            <button
-              type="button"
-              onClick={(e) => {
-                e.preventDefault();
-                capture();
-              }}
-              className="btn3d btn btn-success btn-lg "
-            >
-              <i class="bi bi-fullscreen"></i>
-                Snap
+
+            <button type="button" className="btn3d btn btn-success btn-lg " onClick={(e) => { e.preventDefault(); capture(); }} >
+              <i class="bi bi-fullscreen"></i> Snap
             </button>
 
-            <button
-              type="button"
-              className="btn3d btn btn-danger btn-lg"
-              onClick={() => navigate(-1)}
-            >
-              <i class="bi  bi-x-square"></i>
-              Cancel
+            <button type="button" className="btn3d btn btn-danger btn-lg" onClick={() => navigate(-1)} >
+              <i class="bi  bi-x-square"></i> Cancel
             </button>
+            
           </div>
+
         )}
       </div>
     </div>
