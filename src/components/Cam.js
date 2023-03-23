@@ -14,6 +14,7 @@ const Cam = (newFoto) => {
   const [picture, setPicture] = useState("");
   const webcamRef = React.useRef(null);
   const refresh = () => window.location.reload(true);
+  const retake = () => setPicture("") 
 
   const capture = React.useCallback(() => {
     const pictureSrc = webcamRef.current.getScreenshot();
@@ -60,7 +61,7 @@ const Cam = (newFoto) => {
                 {/* Button Re take */}
                 <button type="button" className="btn btn-warning btn-lg bi-arrow-repeat  m-2"  
                   data-bs-toggle="tooltip" data-bs-placement="top" title="Retake photo ?"
-                  onClick={() => {refresh()}} ></button>
+                  onClick={() => {retake()}} ></button>
               </div>
 
             </div>
