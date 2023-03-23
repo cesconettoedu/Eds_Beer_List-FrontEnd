@@ -50,11 +50,15 @@ const Cam = (newFoto) => {
             <div className="row ">
                 {/* Button confirm picture */}
               <div className="col-6">
-                <button type="button" className="btn btn-success btn-lg bi-hand-thumbs-up  m-2" onClick={() => newFoto.children.newFoto(picture)} ></button>
+                <button type="button" className="btn btn-success btn-lg bi-hand-thumbs-up  m-2" 
+                  data-bs-toggle="tooltip" data-bs-placement="top" title="Save ?"
+                  onClick={() => newFoto.children.newFoto(picture)} ></button>
               </div>
               <div className="col-6">
                 {/* Button Re take */}
-                <button type="button" className="btn btn-warning btn-lg bi-arrow-repeat  m-2"  onClick={() => {refresh()}} ></button>
+                <button type="button" className="btn btn-warning btn-lg bi-arrow-repeat  m-2"  
+                  data-bs-toggle="tooltip" data-bs-placement="top" title="Retake photo ?"
+                  onClick={() => {refresh()}} ></button>
               </div>
 
             </div>

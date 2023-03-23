@@ -163,6 +163,7 @@ useEffect(() => {
                 <button 
                   type="button"
                   className="btn btn-circle bi bi-camera-fill"
+                  data-bs-toggle="tooltip" data-bs-placement="top" title="Take photo"
                   onClick={() => setOpenCam(true)}
                 ></button>
               </div>
@@ -180,6 +181,7 @@ useEffect(() => {
                     className="uploadImg" 
                     type="file"
                     accept="image/*"
+                    data-bs-toggle="tooltip" data-bs-placement="top" title="Choose photo"
                     onChange={onImageChange} 
                   ></input>
                 </div>
