@@ -105,6 +105,19 @@ margin-bottom: 88px;
   border-radius: 77px;
   font-size: 60px;
 }
+
+.bi-camera-fill:hover,
+.bi-file-earmark-arrow-up-fill:hover {
+  background-color: var(--clr-complement-3);
+}
+
+.cancel {
+background-color: var(--c4);
+}
+.cancel:hover, .bi-x-square:hover {
+  background-color: var(--c5);
+}
+
 .circle, .bi-x-square{
   font-size: 20px;
 }
@@ -156,6 +169,13 @@ video, .borderFoto {
 .bi-hand-thumbs-up, .bi-arrow-repeat {
   font-size: 60px;
 }
+.bi-hand-thumbs-up:hover{
+  background-color: var(--c8);
+}
+.bi-arrow-repeat:hover{
+  background-color: var(--c6);
+}
+
 
 
 .showLive{

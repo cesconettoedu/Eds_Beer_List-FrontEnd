@@ -221,13 +221,13 @@ useEffect(() => {
           {edit &&
           <div className="d-flex justify-content-around">
             <button className=' btn include' type="submit">Confirm</button>
-            <button className=' btn include' type="button" onClick={() => List()} >Cancel</button>
+            <button className=' btn include cancel' type="button" onClick={() => List()} >Cancel</button>
           </div>
           }
           {!edit &&
           <div className="d-flex justify-content-around">
             <button className=' btn include' type="submit">Add Beer</button>
-            <button className=' btn include' type="button" onClick={() => List()} >Cancel</button>
+            <button className=' btn include cancel' type="button" onClick={() => List()} >Cancel</button>
           </div>
           }
 
