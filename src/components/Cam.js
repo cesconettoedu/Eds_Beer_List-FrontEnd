@@ -21,12 +21,12 @@ const Cam = (newFoto) => {
   });
 
   return (
-    <div className="container allFrame text-light mt-4">
+    <div className="container allFrame text-light">
       
       <div className="showLive ">
         {picture == "" ? (
           <>
-            <div className="btnCancel">
+            <div className="btnCancel mb-4">
               {/* Button Cancel */}
               <button type="button" className="btn btn-danger btn-lg bi  bi-x-square" onClick={() => {refresh()}} >
               </button>

@@ -185,6 +185,7 @@ video, .borderFoto {
         
 
 .showLive{
+  margin-top: 10%;
   display: flex;
   justify-content: center;
   flex-direction: column;
