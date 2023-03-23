@@ -17,7 +17,7 @@ function Enter() {
           <img src={cherrs} alt="edlogo" className="edlogo" />
           <div className="">
             <Link to="/list">
-              <div className="btn w-100">ENTER</div>
+              <div className="btn enter">ENTER</div>
             </Link>
           </div>
         

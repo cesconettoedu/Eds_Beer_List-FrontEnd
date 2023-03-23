@@ -39,7 +39,7 @@ const Cam = (newFoto) => {
         )}
       </div>
 
-      <div className="container d-flex justify-content-center btnBtns">
+      <div className="btnBtns">
         {picture != "" ? (
           
             <div className="btnCapt ">
@@ -48,7 +48,7 @@ const Cam = (newFoto) => {
                 <i class="bi bi-file-earmark-arrow-down"></i> Save
               </button>
               
-              <button type="button" className="btn3d btn btn-warning btn-lg" onClick={() => {refresh();}} >
+              <button type="button" className="btn3d btn btn-warning btn-lg" onClick={() => {refresh()}} >
                 <i class="bi bi-camera"></i> Retake
               </button>
 
@@ -62,14 +62,14 @@ const Cam = (newFoto) => {
 
           <div className="">
 
-            <button type="button" className="btn3d btn btn-success btn-lg " onClick={(e) => { e.preventDefault(); capture(); }} >
-              <i class="bi bi-fullscreen"></i> Snap
+            <button type="button" className="btn3d btn btn-default btn-lg " onClick={(e) => { e.preventDefault(); capture(); }} >
+              <i class="bi bi-record-circle"></i> 
             </button>
 
             <button type="button" className="btn3d btn btn-danger btn-lg" onClick={() => navigate(-1)} >
-              <i class="bi  bi-x-square"></i> Cancel
+              <i class="bi  bi-x-square"></i>
             </button>
-            
+
           </div>
 
         )}
