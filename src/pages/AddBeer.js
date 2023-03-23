@@ -5,9 +5,10 @@ import { Card, Cam } from "../components";
 import mug from "../assets/mugs/beerIconFull.png";
 import axios from "axios";
 import Resizer from "react-image-file-resizer";
+import NoRotulo from "../assets/noRotulo.jpg"
 
 function AddBeer({addre, edit }) {
-  const [image, setImage] = useState("");
+  const [image, setImage] = useState(NoRotulo);
   const [title, setTitle] = useState("");
   const [note, setNote] = useState("No comments yet");
   const [star, setStar] = useState(0);

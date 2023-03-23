@@ -15,7 +15,7 @@ import mug5 from "../assets/mugs/05mugs.png"
 
 function CardBeer({addre, id, title, image, note, star, notWork}) {
   
-  // console.log("PPP", image);
+
 
   const [stars, setStars] = useState();
   const navigate = useNavigate();
