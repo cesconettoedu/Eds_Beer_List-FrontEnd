@@ -22,14 +22,19 @@ const Cam = (newFoto) => {
 
   return (
     <div className="container text-light mt-4">
-      <h2 className="mb-5 text-center ">Beer Photo Capture</h2>
+      <div className="">
+        {/* Button Cancel */}
+        <button type="button" className="btn btn-danger btn-lg bi  bi-x-square" onClick={() => {refresh()}} >
+        </button>
+      </div>
+      
       <div className="showLive ">
         {picture == "" ? (
           <Webcam
             audio={false}
-            height={400}
+            height={350}
             ref={webcamRef}
-            width={400}
+            width={350}
             screenshotFormat="image/jpeg"
             screenshotQuality={0.7}
             videoConstraints={videoConstraints}
@@ -42,34 +47,22 @@ const Cam = (newFoto) => {
       <div className="btnBtns">
         {picture != "" ? (
           
-            <div className="btnCapt ">
-              
-              <button type="button" className="btn3d btn btn-success btn-lg" onClick={() => newFoto.children.newFoto(picture)} >
-                <i class="bi bi-file-earmark-arrow-down"></i> Save
-              </button>
-              
-              <button type="button" className="btn3d btn btn-warning btn-lg" onClick={() => {refresh()}} >
-                <i class="bi bi-camera"></i> Retake
-              </button>
-
-              <button type="button" className="btn3d btn btn-danger btn-lg" onClick={() => navigate(-1)} >
-                <i class="bi  bi-x-square"></i> Cancel
-              </button>
+            <div className="row ">
+                {/* Button confirm picture */}
+              <div className="col-6">
+                <button type="button" className="btn btn-success btn-lg bi-hand-thumbs-up p-4" onClick={() => newFoto.children.newFoto(picture)} ></button>
+              </div>
+              <div className="col-6">
+                {/* Button Re take */}
+                <button type="button" className="btn btn-warning btn-lg bi-arrow-repeat p-4" onClick={() => {refresh()}} ></button>
+              </div>
 
             </div>
           
         ) : (
-
-          <div className="">
-
-            <button type="button" className="btn3d btn btn-default btn-lg " onClick={(e) => { e.preventDefault(); capture(); }} >
-              <i class="bi bi-record-circle"></i> 
-            </button>
-
-            <button type="button" className="btn3d btn btn-danger btn-lg" onClick={() => navigate(-1)} >
-              <i class="bi  bi-x-square"></i>
-            </button>
-
+          // Button Take Picture
+          <div className="snap">
+            <button type="button" className="btn btn-circle bi bi-record-circle " onClick={(e) => { e.preventDefault(); capture(); }}></button>        
           </div>
 
         )}
@@ -79,5 +72,3 @@ const Cam = (newFoto) => {
 };
 export default Cam;
 
-// https://codepen.io/bepctak/pen/ojXjzR
-// 	<button type="button" class="btn btn-danger btn-lg btn3d"><span class="glyphicon glyphicon-off"></span></button>
