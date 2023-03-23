@@ -21,24 +21,26 @@ const Cam = (newFoto) => {
   });
 
   return (
-    <div className="container text-light mt-4">
-      <div className="">
-        {/* Button Cancel */}
-        <button type="button" className="btn btn-danger btn-lg bi  bi-x-square" onClick={() => {refresh()}} >
-        </button>
-      </div>
+    <div className="container allFrame text-light mt-4">
       
       <div className="showLive ">
         {picture == "" ? (
-          <Webcam
-            audio={false}
-            height={350}
-            ref={webcamRef}
-            width={350}
-            screenshotFormat="image/jpeg"
-            screenshotQuality={0.7}
-            videoConstraints={videoConstraints}
-          />
+          <>
+            <div className="btnCancel">
+              {/* Button Cancel */}
+              <button type="button" className="btn btn-danger btn-lg bi  bi-x-square" onClick={() => {refresh()}} >
+              </button>
+            </div>
+            <Webcam
+              audio={false}
+              height={350}
+              ref={webcamRef}
+              width={350}
+              screenshotFormat="image/jpeg"
+              screenshotQuality={0.7}
+              videoConstraints={videoConstraints}
+            />
+          </>
         ) : (
           <img src={picture} className="borderFoto" />
         )}

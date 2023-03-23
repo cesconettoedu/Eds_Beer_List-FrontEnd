@@ -107,7 +107,8 @@ margin-bottom: 88px;
 }
 
 .bi-camera-fill:hover,
-.bi-file-earmark-arrow-up-fill:hover {
+.bi-file-earmark-arrow-up-fill:hover,
+.bi-record-circle:hover {
   background-color: var(--clr-complement-3);
 }
 
@@ -176,12 +177,21 @@ video, .borderFoto {
   background-color: var(--c6);
 }
 
-
+.allFrame{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+        
 
 .showLive{
   display: flex;
   justify-content: center;
+  flex-direction: column;
+  align-items: flex-start;
 }
+
+
 
 @media(max-width:366px) {
   .card-title {
