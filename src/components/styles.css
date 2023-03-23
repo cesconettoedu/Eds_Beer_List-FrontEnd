@@ -156,7 +156,7 @@ video, .borderFoto {
 }
 
 .snap .btn-circle  {
-  margin-top: 50px;
+  margin-top: 40px;
   width: 97px;
   height: 97px;
   border-radius: 77px;
@@ -192,6 +192,9 @@ video, .borderFoto {
   align-items: flex-start;
 }
 
+.btnBtns .row{
+  margin-top: 60px;
+}
 
 
 @media(max-width:366px) {
