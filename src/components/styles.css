@@ -142,12 +142,15 @@ video, .borderFoto {
 }
 
 .snap .btn-circle  {
-  margin-top: 60px;
-  width: 99px;
-  height: 99px;
-  line-height: 0.33;
+  margin-top: 50px;
+  width: 97px;
+  height: 97px;
   border-radius: 77px;
   font-size: 70px;
+}
+
+.bi-record-circle {
+  background: none;
 }
 
 .bi-hand-thumbs-up, .bi-arrow-repeat {
