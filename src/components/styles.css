@@ -105,7 +105,7 @@ margin-bottom: 88px;
   border-radius: 77px;
   font-size: 60px;
 }
-.circle, .bi-x-square {
+.circle, .bi-x-square{
   font-size: 20px;
 }
 
@@ -136,25 +136,24 @@ video, .borderFoto {
   margin-top: 60px;
 }
 
-
-.btnCapt {
- 
-}
-
 .bi-x-square{
   background-color:var(--c4);
   margin-bottom: 10px;
-  
 }
 
-.snap .btn-circle {
+.snap .btn-circle  {
   margin-top: 60px;
   width: 99px;
   height: 99px;
   line-height: 0.33;
   border-radius: 77px;
+  font-size: 70px;
+}
+
+.bi-hand-thumbs-up, .bi-arrow-repeat {
   font-size: 60px;
 }
+
 
 .showLive{
   display: flex;
