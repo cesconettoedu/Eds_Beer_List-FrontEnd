@@ -23,6 +23,16 @@ Next version, the camera function will be added, to take a photo of the beer and
 
 
 
+
+
+New Feature !
+
+
+https://user-images.githubusercontent.com/99515575/227620104-60583ad8-05a3-4b45-9b13-0402f69689d2.mp4
+Version 2.0125 \
+
+
+
 ## Technologies used:
 Front-end: React, Bootstrap \
 Back-end: Node, Express, MySql \
